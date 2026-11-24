@@ -1,0 +1,17 @@
+/* M6.36: wider, shorter knowledge network. Original content and seven headings stay. */
+#engine.skill-v3-section>.shell{width:min(2180px,calc(100% - 26px));max-width:none}
+#engine .skill-v3-module{grid-template-columns:minmax(0,1fr) 265px!important}
+#engine .skill-v3-module .skill-v3-node.skill-v3-compact{grid-template-columns:9px minmax(0,1fr);gap:3px 4px;padding:7px 6px}
+#engine .skill-v3-module .skill-v3-compact .skill-v3-beacon{width:7px;height:7px}
+#engine .skill-v3-module .skill-v3-compact .skill-v3-label{font-size:clamp(10px,.70vw,11.5px);line-height:1.12;max-height:44px}
+#engine .skill-v3-module .skill-v3-compact small{font-size:8px}
+#engine .skill-v3-module .skill-column{padding-inline:9px}
+@media(max-width:1599px){
+ #engine .skill-v3-module{grid-template-columns:minmax(0,1fr)!important}
+}
+@media(max-width:1230px){
+ #engine.skill-v3-section>.shell{width:calc(100% - 28px)}
+}
+@media(max-width:660px){
+ #engine.skill-v3-section>.shell{width:calc(100% - 20px)}
+}

@@ -1,0 +1,54 @@
+/* Milestone 6.29 — User-authored headline and introduction; editorial About letter. */
+.hero-grid h1 {
+  font-size: clamp(3.0rem, 4.85vw, 5.35rem);
+  line-height: 1.055;
+  letter-spacing: -.067em;
+  max-width: 920px;
+}
+.hero-grid h1 .hero-title-first { display:block; }
+.hero-grid h1 em { display:block; font-style:normal; color:#69bdf0; }
+.introduction .hero-description {
+  max-width: 640px;
+  font-size: 14.5px;
+  line-height: 1.77;
+  margin: 25px 0 26px;
+  text-wrap: pretty;
+}
+.introduction { padding-bottom: 76px; }
+.about.about-letter {
+  display:grid;
+  grid-template-columns: minmax(260px, .79fr) minmax(0, 1.21fr);
+  align-items: start;
+  gap: clamp(35px, 6vw, 95px);
+  padding-top: 114px;
+  padding-bottom: 105px;
+}
+.about-letter-heading { position:sticky; top:115px; }
+.about-letter h2 { max-width:460px; line-height:1.08; font-size:clamp(3rem, 4.4vw, 5rem); }
+.about-letter h2 span { color:#71c6f8; }
+.about-letter-intro { max-width: 345px; margin-top: 24px; color:#8eb4ce!important; font-size:13.5px!important; line-height:1.8!important; }
+.about-letter-body { max-width: 720px; min-width:0; border-top:1px solid #274c69; padding-top:24px; }
+.about.about-letter .about-letter-body p { font-size:15px; line-height:1.9; color:#b7cfe1; margin: 0 0 23px; }
+.about.about-letter .about-letter-body .about-salutation { color:#f3faff; font-weight:600; font-size:19px; margin-bottom:9px; }
+.about.about-letter .about-letter-body .about-signature { font-family:var(--display); font-size:27px; font-weight:600; color:#90d4fa; letter-spacing:-.04em; padding-top:7px; margin-bottom:0; }
+@media(max-width:1050px) {
+  .about.about-letter {grid-template-columns:minmax(220px,.75fr) minmax(0,1.25fr);gap:32px;}
+  .hero-grid h1 {font-size:clamp(3rem,5.45vw,5.0rem);}
+}
+@media(max-width:900px) {
+  .about.about-letter {grid-template-columns:1fr;gap:33px;padding-top:80px;padding-bottom:70px;}
+  .about-letter-heading {position:static;}
+  .about-letter h2 {max-width:760px;}
+  .about-letter-intro {max-width:650px;}
+  .introduction .hero-description {max-width:720px;}
+  .hero-grid h1 {font-size:clamp(3rem,7.5vw,5.4rem);max-width:730px;}
+}
+@media(max-width:620px) {
+  .hero-grid h1 {font-size:clamp(2.72rem,10.5vw,4.2rem);line-height:1.07;letter-spacing:-.07em;}
+  .introduction .hero-description {font-size:14px;line-height:1.8;margin:21px 0 27px;}
+  .about.about-letter {padding-top:66px;padding-bottom:65px;gap:24px;}
+  .about-letter h2 {font-size:clamp(2.8rem,11vw,3.7rem);}
+  .about-letter-intro {font-size:13px!important;margin-top:18px;}
+  .about-letter-body {padding-top:19px;}
+  .about.about-letter .about-letter-body p {font-size:14px;line-height:1.82;margin-bottom:20px;}
+}

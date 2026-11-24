@@ -1,0 +1,80 @@
+/* M6.46 · Clean focus / original project art. All imagery is local, reused,
+   and shown exclusively beneath the graph (never as a hover overlay). */
+#engine .skill-v3-module .skill-v3-node {cursor:pointer}
+#engine .skill-v3-module .skill-v3-node:focus-visible,
+#engine .skill-v46-gallery-card:focus-visible {outline:2px solid #a9ecff;outline-offset:3px}
+#engine .skill-v3-module .skill-v3-node:hover:not(.is-muted),
+#engine .skill-v3-module .skill-v3-node:focus-visible:not(.is-muted) {
+ border-color:#c8f3ff!important;
+}
+/* When previewing, retain the pinned selection's outline so it isn't lost. */
+#engine .skill-v3-module .skill-v3-node.is-selected {outline:1px solid #d5f7ff;outline-offset:-3px}
+/* Existing solid lines remain discernible while the active route takes focus. */
+#engine .skill-v3-module .skill-v3-connection.skill-v45-edge.is-muted .skill-v3-wire {stroke-opacity:.25}
+#engine .skill-v3-module .skill-v3-node.is-muted {opacity:.51}
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-front {stroke-width:3.4;filter:drop-shadow(0 0 4px #59bdec)}
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-pulse {
+ stroke-dasharray:5 95;stroke-dashoffset:100;
+ animation:m639-signal-flow 4.5s linear var(--flow-delay,0s) infinite;
+}
+#engine .skill-v3-module.skill-v3-paused .skill-v42-focus-pulse {animation:none!important;display:none!important}
+#engine .skill-v3-panel .skill-v46-quiet-note {color:#92bcd4;font:500 12px/1.6 'DM Sans',sans-serif;margin:8px 0 15px}
+#engine .skill-v46-gallery-heading {display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:24px 0 12px;color:#a2cee5;font:700 11px/1.3 'DM Mono',monospace;letter-spacing:.05em}
+#engine .skill-v46-gallery-heading span {font:500 12px 'DM Sans',sans-serif;letter-spacing:0}
+#engine .skill-v46-gallery {display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+#engine .skill-v46-gallery-card {min-width:0;display:flex;flex-direction:column;text-align:left;gap:8px;padding:0 0 9px;overflow:hidden;border:1px solid #356987;background:#09253a;border-radius:4px;cursor:pointer;color:#e9f7ff;transition:border-color .18s,background .18s,transform .18s}
+#engine .skill-v46-gallery-card img {width:100%;aspect-ratio:1.38;object-fit:cover;display:block;background:#082035}
+#engine .skill-v46-gallery-card span {display:block;font:700 12px/1.35 'DM Sans',sans-serif;padding:0 10px;overflow-wrap:anywhere}
+#engine .skill-v46-gallery-card:hover {border-color:#92dfff;background:#124463;transform:translateY(-2px)}
+#engine .skill-v46-project-lead {display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:clamp(22px,4vw,62px);align-items:start;margin:8px 0 26px}
+#engine .skill-v46-eyebrow {font:750 11px 'DM Mono',monospace;letter-spacing:.11em;color:#8edaff;margin:0 0 13px}
+#engine .skill-v46-full-description {font:440 14px/1.85 'DM Sans',sans-serif;color:#cce5f2;margin:0 0 22px;max-width:780px}
+#engine .skill-v46-project-art {min-width:0;margin:0;background:#071a2b;border:1px solid #33738f;border-radius:4px;overflow:hidden}
+#engine .skill-v46-project-art img {display:block;width:100%;height:auto;aspect-ratio:1.34;object-fit:cover;background:#071c2e}
+#engine .skill-v46-project-art figcaption {font:500 11px/1.5 'DM Sans',sans-serif;color:#91bed4;padding:11px 13px 13px;background:#09243a}
+#engine .skill-v46-below-grid {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.5fr);gap:clamp(22px,3vw,54px);border-top:1px solid #2a5c79;padding-top:10px}
+#engine .skill-v46-below-grid .skill-v3-panel-group {border-top:0}
+#engine .skill-v46-below-grid .skill-v3-panel-group .skill-v3-panel-group {border-top:0;padding-top:3px}
+#engine .skill-v46-project-aside {align-self:start}
+#engine .skill-v46-project-aside strong {font:700 13px 'DM Sans',sans-serif}
+#engine .skill-v46-skill-layout {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(24px,4vw,66px);margin-top:4px}
+#engine .skill-v46-support-gallery {display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:11px;margin-top:15px}
+#engine .skill-v46-support-gallery .skill-v46-gallery-card img {aspect-ratio:1.55}
+#engine .skill-v46-support-gallery .skill-v46-gallery-card span {font-size:12px}
+#engine .skill-v46-skill-layout .skill-v3-panel-group {padding-top:9px}
+#engine .skill-v46-skill-layout .skill-detail-neighbors .skill-v3-panel-group {border-top:1px solid #366685}
+#engine .skill-v46-project-copy .network-focus-result {margin-top:14px}
+@media(max-width:1400px){
+ #engine .skill-v46-gallery {grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:850px){
+ #engine .skill-v46-gallery {grid-template-columns:repeat(3,minmax(0,1fr))}
+ #engine .skill-v46-project-lead,#engine .skill-v46-below-grid,#engine .skill-v46-skill-layout {grid-template-columns:1fr;gap:20px}
+ #engine .skill-v46-project-art {max-width:730px}
+ #engine .skill-v46-project-art img {aspect-ratio:1.5}
+ #engine .skill-v46-project-aside {border-top:1px solid #2b5d7a;border-left:0;padding:14px 0 0}
+}
+@media(max-width:480px){
+ #engine .skill-v46-gallery {grid-template-columns:repeat(2,minmax(0,1fr))}
+ #engine .skill-v46-gallery-card img {aspect-ratio:1.6}
+ #engine .skill-v46-support-gallery {grid-template-columns:repeat(2,minmax(0,1fr))}
+ #engine .skill-v46-full-description {font-size:13px;line-height:1.73}
+}
+@media(prefers-reduced-motion:reduce){
+ #engine .skill-v46-gallery-card {transition:none}
+ #engine .skill-v46-gallery-card:hover {transform:none}
+ #engine .skill-v3-module .skill-v42-focus-pulse {animation:none!important;display:none!important}
+}
+/* Engineering notes are expandable INLINE, not a modal or hovering card. */
+#engine .skill-v46-notes {border:1px solid #326987;border-radius:4px;margin-top:22px;background:#08273d;overflow:hidden}
+#engine .skill-v46-notes summary {padding:13px 15px;cursor:pointer;color:#d0f0ff;font:750 12px/1.3 'DM Sans',sans-serif;list-style:revert}
+#engine .skill-v46-notes summary:hover,#engine .skill-v46-notes summary:focus-visible {background:#10405b;color:white}
+#engine .skill-v46-notes-content {border-top:1px solid #315e79;padding:20px}
+#engine .skill-v46-notes-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px}
+#engine .skill-v46-notes-grid strong,#engine .skill-v46-notes-limit strong {font:750 11px 'DM Mono',monospace;color:#89d5fa;letter-spacing:.03em}
+#engine .skill-v46-notes-grid p,#engine .skill-v46-notes-limit {margin:8px 0 0;font:440 12px/1.7 'DM Sans',sans-serif;color:#c9e3ef}
+#engine .skill-v46-notes-limit {margin-top:23px;border-top:1px solid #2b5a77;padding-top:15px}
+#engine .skill-v46-notes-proof {margin:16px 0 0;border:1px solid #32718f}
+#engine .skill-v46-notes-proof img {width:100%;display:block;height:auto;max-height:330px;object-fit:contain;background:#071829}
+#engine .skill-v46-notes-proof figcaption {padding:8px 12px;color:#93c7dd;font:500 10px 'DM Sans',sans-serif}
+@media(max-width:620px){#engine .skill-v46-notes-grid{grid-template-columns:1fr}}

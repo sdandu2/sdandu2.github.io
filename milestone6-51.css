@@ -1,0 +1,15 @@
+/* M6.51 — A personal note that complements rather than repeats the portfolio. */
+/* The overline and heading now stand alone; no redundant intro paragraph. */
+.about.about-letter .about-letter-body { max-width: 690px; }
+.about.about-letter .about-letter-body p:not(.about-salutation):not(.about-signature) {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15.5px;
+  line-height: 1.84;
+  letter-spacing: 0;
+}
+@media (max-width:620px) {
+  .about.about-letter .about-letter-body p:not(.about-salutation):not(.about-signature) {
+    font-size: 14.5px;
+    line-height: 1.78;
+  }
+}

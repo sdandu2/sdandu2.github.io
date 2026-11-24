@@ -1,0 +1,43 @@
+/* Milestone 6.26 — Restore the approved six-column cinematic network.
+   No horizontal scroll: the network is a curated window into 147 skills. */
+#engine .skill-atlas-navigation{padding:20px 24px 18px;gap:13px 22px;background:linear-gradient(110deg,#071c2b 0%,#061524 65%,#03111d 100%);border-color:#347797}
+#engine .skill-role-guide{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:#81b9d9;font:700 11px/1.3 var(--mono);letter-spacing:.07em}
+#engine .skill-role-guide-label{color:#90defa}
+#engine .skill-role-guide-hint{color:#729eb9;font-weight:400;text-transform:none;letter-spacing:0}
+#engine .skill-layer-tabs{display:flex;gap:12px;flex-wrap:wrap;align-items:center;flex:1;justify-content:center}
+#engine .skill-layer-tabs button{min-width:104px;padding:12px 18px;border:1px solid #37617d;background:linear-gradient(120deg,#091f31,#061728);color:#b5d9ec;border-radius:5px;font:700 13px/1 var(--display);transition:background .15s,color .15s,border-color .15s,box-shadow .15s}
+#engine .skill-layer-tabs button[aria-pressed="true"]{color:#f7fdff;border-color:#8de1ff;background:linear-gradient(120deg,#175e82,#0e3d59);box-shadow:0 0 0 2px #55b9e52e,0 0 22px #5ecfff30,inset 0 0 16px #77dfff21}
+#engine .skill-atlas-search-wrap{flex:0 1 240px}
+#engine .skill-atlas-navigation .skill-v2-view-controls{margin-top:0;padding-top:12px;border-top:1px solid #28526c;color:#9fc4da;font-size:11px}
+#engine .skill-v2-view-controls button{padding:9px 13px}
+#engine .skill-software-subfilters{padding:7px 0 3px}
+#engine .skill-atlas-module{grid-template-columns:minmax(0,1fr) 294px!important;border-color:#376c88}
+#engine .skill-atlas-stage{background:radial-gradient(ellipse at 50% 44%,#15507929,transparent 75%),linear-gradient(180deg,#051727 0%,#071d2f 54%,#041321 100%)}
+#engine .skill-atlas-viewport{height:754px!important;max-height:none!important;overflow:hidden!important}
+#engine .skill-atlas-canvas{height:754px!important;min-height:754px!important}
+#engine .skill-column{padding:24px 13px 9px;background:linear-gradient(97deg,rgba(26,93,133,.30),rgba(13,60,91,.14) 82%,rgba(3,24,40,.06));border-left:1px solid rgba(86,161,202,.2);border-right:1px solid rgba(86,161,202,.2);clip-path:polygon(0 0,100% 4.5%,100% 95.5%,0 100%)}
+#engine .skill-column>span{font:700 clamp(9px,.76vw,12px)/1.3 var(--mono);color:#98e4ff;letter-spacing:.04em}
+#engine .skill-v2-node{height:55px;min-height:55px;max-height:61px;padding:8px 7px 7px 9px;grid-template-columns:19px minmax(0,1fr);border:1px solid #3c829f;border-left:3px solid #46b8df;background:linear-gradient(100deg,#0b2c43 0%,#071e30 100%);box-shadow:0 5px 13px #01101b90;gap:2px 5px}
+#engine .skill-v2-node .skill-node-title{font:700 clamp(11px,.85vw,13px)/1.16 var(--display);hyphens:auto;overflow-wrap:normal;color:#f0fbff}
+#engine .skill-v2-node .skill-node-index{font:700 9px var(--mono);color:#75c7e7}
+#engine .skill-v2-node small{font:9px/1.15 var(--mono);color:#91bcd4}
+#engine .skill-v2-node.skill-v2-explore{border:1px dashed #7495ac;border-left:3px dashed #8cacc6;background:linear-gradient(100deg,#082031,#071a28)}
+#engine .skill-v2-node.is-muted{opacity:.34}
+#engine .skill-v2-node.is-selected{border-color:#a8f3ff;background:linear-gradient(100deg,#15516c,#0c3047);box-shadow:0 0 0 1px #8edfff50,0 0 20px #56c4fc55;z-index:10}
+#engine .skill-edge{transition:stroke-opacity .18s,stroke-width .18s;stroke-linecap:round;stroke:#499cbd;stroke-width:1.2;stroke-opacity:.47;filter:none}
+#engine .skill-edge-proof{stroke:#489fc4;stroke-opacity:.45}
+#engine .skill-edge-context{stroke:#83b7c9;stroke-width:1.05;stroke-opacity:.32;stroke-dasharray:3 7}
+#engine .skill-edge.is-muted{stroke-opacity:.055}
+#engine .skill-edge.is-related{stroke:#93e5ff;stroke-width:2;stroke-opacity:1;filter:drop-shadow(0 0 3px #4ac4ffab)}
+#engine .skill-edge-context.is-related{stroke-dasharray:3 7;stroke:#9cbcd5}
+#engine .skill-connectivity-legend{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px 12px;border-top:1px solid #25516a;padding:11px 18px;background:#051523;font:10px/1.4 var(--mono);color:#94bed3}
+#engine .skill-connectivity-legend>span{display:flex;align-items:center;gap:8px}
+#engine .skill-line-key{width:26px;height:0;display:inline-block;border-top:2px solid #71c4e6}
+#engine .skill-line-context{border-top:2px dashed #91b1c2}
+#engine .skill-clear-hint{color:#7dabc7}
+#engine .skill-atlas-module .network-focus{padding:26px 23px}
+#engine .skill-atlas-module .network-focus h3{font-size:clamp(24px,1.9vw,34px)}
+#engine .network-stage-bottom{letter-spacing:.07em}
+@media(max-width:1370px){#engine .skill-atlas-module{grid-template-columns:minmax(0,1fr)!important}#engine .skill-atlas-module .network-focus{border-top:1px solid #32637b;border-left:none}}
+@media(max-width:970px){#engine .skill-atlas-navigation{padding:14px}#engine .skill-role-guide-hint{display:none}#engine .skill-layer-tabs{justify-content:flex-start;gap:8px}#engine .skill-layer-tabs button{min-width:0;padding:10px 12px;font-size:12px}#engine .skill-atlas-search-wrap{flex:1 1 100%}#engine .skill-atlas-viewport{display:none!important}#engine .skill-atlas-mobile{display:grid!important}#engine .skill-connectivity-legend{font-size:9px}#engine .skill-atlas-module .network-focus{padding:23px}}
+@media(max-width:520px){#engine .skill-atlas-navigation{gap:12px}#engine .skill-role-guide{font-size:10px}#engine .skill-atlas-navigation .skill-v2-view-controls{gap:8px}#engine .skill-atlas-module .network-focus{padding:19px}#engine .skill-clear-hint{display:none}}

@@ -1,0 +1,58 @@
+/* M6.38 — calm, editorially curated network. Inherits the existing navy / cyan
+   palette and DM Sans + DM Mono typography; no new theme colors. */
+#engine .skill-v3-module .skill-v3-viewport,
+#engine .skill-v3-module .skill-atlas-canvas{--graph-height:1450px}
+#engine .skill-v3-module .skill-v3-wire{
+  stroke-width:1.25;
+  stroke-opacity:.30;
+  filter:none;
+}
+#engine .skill-v3-module .skill-v3-wire.skill-v3-context{
+  stroke:#6b9ab8;
+  stroke-dasharray:3 6;
+  stroke-width:1.05;
+  stroke-opacity:.15;
+  filter:none;
+}
+#engine .skill-v3-module .skill-v3-wire.is-related{
+  stroke:#9cdeff;
+  stroke-width:2.45;
+  stroke-opacity:.94;
+  filter:drop-shadow(0 0 3px rgba(88,172,222,.43));
+}
+#engine .skill-v3-module .skill-v3-wire.skill-v3-context.is-related{
+  stroke:#84bfe2;
+  stroke-width:1.8;
+  stroke-opacity:.79;
+  filter:none;
+}
+#engine .skill-v3-module .skill-v3-wire.is-muted{stroke-opacity:.035;filter:none}
+#engine .skill-v3-module .skill-v3-node .skill-v3-label{
+  font:700 clamp(11px,.83vw,13px)/1.24 'DM Sans',sans-serif;
+  max-height:46px;
+}
+#engine .skill-v3-module .skill-v3-node{
+  border-color:#32617e;
+  box-shadow:inset 0 1px 0 rgba(145,209,241,.09),0 2px 8px #0108154a;
+}
+#engine .skill-v3-module .skill-v3-node.skill-v3-explore{border-style:dashed}
+#engine .skill-v3-module .skill-v3-node small,
+#engine .skill-v3-module .skill-column small,
+#engine .skill-v3-footer{font-family:'DM Mono',ui-monospace,monospace}
+#engine .skill-v3-module .skill-column{
+  border-color:#20476278;
+  background:linear-gradient(90deg,rgba(10,42,67,.46),rgba(6,31,53,.18) 94%);
+}
+#engine .skill-v3-module .skill-v3-node:hover,
+#engine .skill-v3-module .skill-v3-node:focus-visible,
+#engine .skill-v3-module .skill-v3-node.is-selected{
+  box-shadow:0 0 0 1px #7ed7ff65,0 0 14px rgba(82,184,243,.33);
+}
+@media(max-width:1230px){
+  #engine .skill-v3-module .skill-v3-mobile-group{gap:10px}
+  #engine .skill-v3-module .skill-v3-mobile-group>div{gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  #engine .skill-v3-module .skill-v3-wire,
+  #engine .skill-v3-module .skill-v3-node{animation:none!important;transition:none!important}
+}

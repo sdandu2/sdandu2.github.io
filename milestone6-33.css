@@ -1,0 +1,85 @@
+/* M6.33 — Cinematic Journey labels and legibility pass.
+   This intentionally does not alter the approved 3D Career Stack, graph or hero. */
+.journey-m612 .journey-title-row {
+  margin-bottom:24px;
+}
+.journey-m612 .journey-scroll-intro {
+  display:flex;
+  align-items:center;
+  gap:12px 19px;
+  flex-wrap:wrap;
+  min-height:68px;
+  padding:15px 20px;
+  margin-bottom:0;
+  border:1px solid rgba(101,189,238,.37);
+  background:linear-gradient(105deg,rgba(13,51,78,.82),rgba(7,29,48,.77));
+  box-shadow:inset 0 1px rgba(153,215,246,.11),0 12px 40px rgba(0,0,0,.14);
+  color:#e4f5ff;
+  line-height:1.5;
+  letter-spacing:normal;
+}
+.journey-m612 .journey-scroll-intro .journey-scroll-led {
+  flex:0 0 9px;
+  width:9px;height:9px;
+  background:#7fe0ff;
+  box-shadow:0 0 0 4px rgba(104,196,244,.1),0 0 18px rgba(104,196,244,.6);
+}
+.journey-m612 .journey-scroll-intro strong {
+  font:700 12px/1.4 var(--sans);
+  letter-spacing:.085em;
+  color:#e6f8ff;
+  white-space:nowrap;
+}
+.journey-m612 .journey-scroll-intro .journey-navigation-instruction {
+  font:600 13px/1.45 var(--sans);
+  letter-spacing:.008em;
+  color:#c8e8fb;
+  margin:0;
+}
+.journey-m612 .journey-scroll-intro .journey-skip-top {
+  margin-left:auto;
+  font:600 12px/1.45 var(--sans);
+  color:#9de1ff;
+  border-bottom-color:rgba(133,211,255,.6);
+}
+.journey-m612 .journey-visual-top {
+  justify-content:flex-end;
+  font:700 12px/1.4 var(--sans);
+  letter-spacing:.08em;
+  color:#a9e4fd;
+}
+.journey-m612 .journey-narrative-meta {
+  font:700 12px/1.45 var(--sans);
+  letter-spacing:.075em;
+  color:#9adafa;
+}
+.journey-m612 .journey-narrative .journey-place {
+  font:600 12px/1.45 var(--sans);
+  letter-spacing:.07em;
+  color:#a7cde6;
+  margin:9px 0 10px;
+}
+.journey-m612 .cinema-copy-slide .journey-narrative-copy p {
+  font:400 clamp(13px,1.08vw,15px)/1.58 var(--sans);
+  color:#d4e9f6;
+}
+.journey-m612 .journey-scene-readmore {
+  font:700 13px/1.4 var(--sans);
+  color:#9cdcff;
+  padding-bottom:5px;
+}
+@media(max-width:900px) {
+  .journey-m612 .journey-scroll-intro {padding:13px 15px;gap:9px 14px}
+  .journey-m612 .journey-scroll-intro .journey-navigation-instruction {font-size:12px}
+  .journey-m612 .journey-scroll-intro .journey-skip-top {font-size:11px}
+}
+@media(max-width:620px) {
+  .journey-m612 .journey-scroll-intro {padding:14px 16px;gap:8px 12px}
+  .journey-m612 .journey-scroll-intro .journey-navigation-instruction {flex-basis:calc(100% - 21px);font-size:12.5px}
+  .journey-m612 .journey-scroll-intro .journey-skip-top {margin-left:21px;font-size:11.5px}
+  .journey-m612 .journey-narrative-meta {font-size:10.5px;line-height:1.4}
+  .journey-m612 .journey-narrative .journey-place {font-size:10.5px;line-height:1.4}
+  .journey-m612 .journey-scene-readmore {font-size:12px}
+  .journey-m612 .journey-visual-top {font-size:10.5px}
+  .journey-m612 .cinema-copy-slide .journey-narrative-copy p {font-size:12.5px;line-height:1.52}
+}

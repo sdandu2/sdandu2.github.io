@@ -1,0 +1,76 @@
+/* M6.41 · Readable career lenses and deliberate signal emphasis.
+   Keep the M6.40 eight-family geometry; all nodes / edges remain rendered. */
+#engine .skill-v41-careers{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:22px;row-gap:10px;
+  padding:17px 20px 15px;background:linear-gradient(115deg,#071e31,#04121f 76%);
+  border:1px solid #2d5c7c;border-bottom:0;
+}
+#engine .skill-v41-lens-intro{display:flex;flex-direction:column;gap:4px;min-width:190px}
+#engine .skill-v41-lens-intro strong{color:#e9f7ff;font:800 14px/1.2 'DM Sans',sans-serif}
+#engine .skill-v41-lens-intro span{font:400 12px/1.5 'DM Sans',sans-serif;color:#92b5cd}
+#engine .skill-v41-career-buttons{display:flex;flex-wrap:wrap;gap:7px;align-items:center;justify-content:flex-end}
+#engine .skill-v41-career-buttons button{
+  border:1px solid #355f7d;border-radius:5px;background:#0a2438;color:#b8d8ea;
+  padding:10px 16px;min-height:39px;cursor:pointer;
+  font:700 12px/1.1 'DM Sans',sans-serif;transition:background .2s,border-color .2s;
+}
+#engine .skill-v41-career-buttons button:hover,#engine .skill-v41-career-buttons button:focus-visible{border-color:#8cd5fc;color:#eefaff;background:#123a56}
+#engine .skill-v41-career-buttons button[aria-pressed="true"]{color:#effaff;background:#165372;border-color:#8bd8ff;box-shadow:inset 0 0 0 1px rgba(159,224,255,.12)}
+#engine .skill-v41-career-buttons button:focus-visible{outline:2px solid #c9efff;outline-offset:3px}
+#engine .skill-v41-lens-status{grid-column:1/-1;margin:0;color:#82b7d4;font:500 11px/1.5 'DM Sans',sans-serif}
+
+/* More legible typography: 11.5–13px node names and 9.5px supporting text. */
+#engine .skill-v3-module .skill-column>span{font:800 clamp(11px,.76vw,13px)/1.22 'DM Sans',sans-serif;letter-spacing:.015em}
+#engine .skill-v3-module .skill-column>small{font:500 11px/1.32 'DM Sans',sans-serif;color:#8baec7}
+#engine .skill-v3-module .skill-v3-node{
+  height:59px!important;min-height:59px!important;max-height:59px!important;
+  padding:8px 7px 7px 9px;gap:3px 6px;
+}
+#engine .skill-v3-module .skill-v3-node .skill-v3-label{
+  font:700 clamp(11.5px,.75vw,13px)/1.16 'DM Sans',sans-serif;
+  max-height:45px;
+}
+#engine .skill-v3-module .skill-v3-node small{
+  font:650 9.5px/1.13 'DM Sans',sans-serif;color:#a0c5db;
+  letter-spacing:.015em;
+}
+#engine .skill-v3-module .skill-v3-node.is-lens-dim:not(.is-selected){opacity:.39}
+#engine .skill-v3-module .skill-v3-node.is-lens-dim:not(.is-selected):hover,
+#engine .skill-v3-module .skill-v3-node.is-lens-dim:focus-visible{opacity:1}
+#engine .skill-v3-module .skill-v3-node.is-related{opacity:1;z-index:4}
+#engine .skill-v3-module .skill-v3-node.is-selected{opacity:1;z-index:8}
+#engine .skill-v3-module .skill-v3-node.is-muted{opacity:.26}
+
+/* The solid circuit NEVER vanishes: career mode adjusts hierarchy only. */
+#engine .skill-v3-module .skill-v3-connection.is-lens-dim .skill-v3-wire{stroke-opacity:.23;filter:none}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-lens-dim .skill-v3-wire{stroke-opacity:.17}
+#engine .skill-v3-module .skill-v3-connection.is-lens-related .skill-v3-wire{stroke-opacity:.86;stroke-width:2;filter:drop-shadow(0 0 3px rgba(94,173,218,.32))}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-lens-related .skill-v3-wire{stroke-opacity:.54;stroke-width:1.6;filter:none}
+#engine .skill-v3-module .skill-v3-connection.is-lens-dim .skill-v3-signal{stroke-opacity:0}
+#engine .skill-v3-module .skill-v3-connection.is-lens-related.is-ambient .skill-v3-signal{stroke-opacity:.8}
+#engine .skill-v3-module .skill-v3-connection.is-related .skill-v3-wire,
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-related .skill-v3-wire{
+  stroke:#b2ecff;stroke-width:3;stroke-opacity:1;filter:drop-shadow(0 0 5px rgba(107,208,255,.85));
+}
+#engine .skill-v3-module .skill-v3-connection.is-related .skill-v3-signal{
+  stroke:#d6f9ff;stroke-width:4;stroke-opacity:1;
+  animation-duration:2.85s;filter:drop-shadow(0 0 7px rgba(140,222,255,.94));
+}
+#engine .skill-v3-module .skill-v3-connection.is-muted .skill-v3-wire{stroke-opacity:.17;filter:none}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-muted .skill-v3-wire{stroke-opacity:.12}
+#engine .skill-v3-module .skill-v3-connection.is-muted .skill-v3-signal{stroke-opacity:0}
+#engine .skill-v3-module .skill-v3-mobile-group button.is-lens-dim{opacity:.6}
+#engine .skill-v3-module .skill-v3-mobile-group button.is-lens-dim:hover,
+#engine .skill-v3-module .skill-v3-mobile-group button.is-lens-dim:focus-visible{opacity:1}
+@media(max-width:1320px){
+  #engine .skill-v41-careers{grid-template-columns:1fr;gap:12px}
+  #engine .skill-v41-career-buttons{justify-content:flex-start}
+}
+@media(max-width:760px){
+  #engine .skill-v41-careers{padding:15px 13px}
+  #engine .skill-v41-career-buttons button{min-height:43px;padding:11px 13px}
+  #engine .skill-v41-lens-intro{min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+  #engine .skill-v41-career-buttons button{transition:none}
+}

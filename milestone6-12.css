@@ -1,0 +1,286 @@
+/* ================================================================
+   M6.12 — Immersive career film. Only styles the seven-scene journey.
+   The existing experience stack, the project network, and the rest
+   of the portfolio retain their Milestone 6.11 design and behavior.
+   ================================================================ */
+.journey-m612{
+  background:linear-gradient(180deg,#030a12 0%,#05111d 18%,#051523 66%,#04111e 100%);
+  overflow:clip;
+  padding-top:88px;
+}
+.journey-m612 .journey-title-row{margin-bottom:20px}
+.journey-m612 .journey-scroll-intro{border-color:#25465b; margin-bottom:0}
+.journey-m612 .journey-scroll-film{
+  width:100vw;max-width:none;position:relative;left:50%;transform:translateX(-50%);
+  margin:0;height:740vh;
+}
+.journey-m612 .journey-pin{
+  position:sticky;top:84px;min-height:0;
+  height:calc(100svh - 84px);display:block;pointer-events:none;
+}
+.journey-m612 .journey-pin .journey-stage-reel{
+  height:100%;width:100%;pointer-events:auto;box-shadow:none;
+  display:grid;grid-template-rows:minmax(0,1fr) auto;
+  overflow:hidden;border:0;min-height:0;background:transparent;
+}
+.journey-m612 .journey-cinema-stage{display:block;position:relative;min-height:0!important;height:100%;overflow:hidden}
+.journey-m612 .journey-film{
+  display:block;position:absolute;inset:0;border:0!important;
+  height:100%;min-height:0;
+  background:radial-gradient(ellipse 48% 58% at 50% 33%,#0b3550 0%,#071a2b 40%,#04101d 80%)!important;
+}
+.journey-m612 .journey-film::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(#b4deff20 .75px,transparent 1px);
+  background-size:36px 36px;mask-image:linear-gradient(to bottom,transparent,#000 24%,#000 68%,transparent 100%);opacity:.35;
+}
+.journey-m612 .journey-viewport{
+  position:absolute;inset:0;min-height:0!important;height:100%!important;overflow:hidden;
+  background:transparent!important;box-shadow:none!important;
+}
+.journey-m612 .journey-viewport:before,.journey-m612 .journey-viewport:after,
+.journey-m612 .journey-scene-glow,.journey-m612 .journey-visual-index{display:none!important}
+.journey-m612 .journey-visual{position:absolute;inset:0;overflow:hidden;z-index:1}
+.journey-m612 .journey-visual-top{
+  position:absolute;top:clamp(21px,3vh,38px);left:max(32px,4.8vw);right:max(32px,4.8vw);
+  display:flex;justify-content:space-between;align-items:center;z-index:8;
+  color:#9fcee5;font:500 10px/1.4 var(--mono);letter-spacing:.17em;border:0!important;
+  background:transparent!important;padding:0!important
+}
+.journey-m612 .journey-stage-data{display:none!important}
+.cinema-environment,.cinema-moments{position:absolute;inset:0;pointer-events:none}
+.cinema-environment{z-index:0;overflow:hidden}
+.cinema-halo{position:absolute;width:min(72vw,880px);aspect-ratio:1;left:50%;top:33%;border-radius:50%;transform:translate(-50%,-50%);filter:blur(45px);pointer-events:none}
+.cinema-halo.halo-one{background:radial-gradient(circle,#1f74a925,transparent 65%);animation:cinemaBreath 12s ease-in-out infinite alternate}
+.cinema-halo.halo-two{background:radial-gradient(circle,#4298af19,transparent 66%);transform:translate(-57%,-48%) scale(.78);animation:cinemaBreath 17s ease-in-out infinite alternate-reverse}
+.cinema-orbit{position:absolute;border:1px solid rgba(118,193,226,.095);border-radius:50%;width:min(72vw,1020px);height:min(72vw,1020px);left:50%;top:30%;transform:translate(-50%,-50%) rotate(-25deg) scaleY(.6)}
+.cinema-orbit.orbit-two{width:min(89vw,1420px);height:min(89vw,1420px);border-style:dashed;border-color:rgba(105,163,201,.065);transform:translate(-50%,-50%) rotate(32deg) scaleY(.62)}
+.cinema-particle-field{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.cinema-moments{z-index:2}
+.cinema-moment{position:absolute;inset:0;visibility:hidden;opacity:0;pointer-events:none;will-change:opacity,transform,filter;transform-origin:50% 35%}
+.cinema-moment-art{position:absolute;left:50%;top:7%;transform:translateX(-50%);width:min(1180px,90vw);height:59%;min-height:320px;display:grid;place-items:center}
+/* The story sits below the visuals, in open space: no two-column panel. */
+.journey-m612 .journey-scroll-film .journey-narrative{
+  position:absolute;left:max(7vw,36px);bottom:clamp(18px,3.6vh,45px);
+  z-index:5;width:min(990px,83vw);max-width:none;min-height:0!important;
+  padding:0!important;margin:0;display:flex;align-items:flex-start;justify-content:flex-end;
+  flex-direction:column;border:0;box-shadow:none;background:transparent!important;
+  text-shadow:0 3px 18px rgba(0,0,0,.43);
+}
+.journey-m612 .journey-narrative-meta{font:500 10px/1.4 var(--mono);letter-spacing:.15em;color:#85c6ea;gap:24px}
+.journey-m612 .journey-narrative .journey-place{
+  margin:10px 0 9px;color:#8cb6d4;letter-spacing:.12em;text-transform:uppercase;
+  font:500 10px/1.5 var(--mono);
+}
+.journey-m612 .journey-narrative h3{
+  margin:0 0 12px!important;color:#f5fbff;
+  font:650 clamp(29px,3.6vw,54px)/1.04 var(--display)!important;
+  letter-spacing:-.059em;max-width:22ch;
+}
+.journey-m612 .journey-narrative-copy{max-width:81ch}
+.journey-m612 .journey-narrative-copy p{
+  font:400 clamp(12px,1.05vw,14px)/1.62 var(--sans);color:#c2dce9;
+  margin:0;max-width:81ch;
+}
+.journey-m612 .journey-scene-readmore{display:inline-flex;gap:10px;align-items:center;letter-spacing:.02em;font:600 12px/1.4 var(--sans);margin-top:13px;color:#9ddcfa;text-decoration:none;border-bottom:1px solid #3f7da6;padding-bottom:4px;pointer-events:auto}
+.journey-m612 .journey-scene-readmore:hover{color:#fff;border-color:#d9f5ff}
+.journey-m612 .journey-playback{
+  position:relative;z-index:10;padding:9px max(30px,4.8vw) 11px!important;
+  border-top:1px solid #4770883b;background:linear-gradient(180deg,#071723b8,#061421d9)!important;
+  backdrop-filter:blur(16px);
+}
+.journey-m612 .journey-playback-head{display:none}
+.journey-m612 .journey-playback-track{height:2px;position:relative;background:#35546a61;margin:0 0 10px}
+.journey-m612 .journey-playback-track span{background:linear-gradient(90deg,#5eaae8,#8feaff)}
+.journey-m612 .journey-chapter-scrubber{
+  display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;
+  margin:0 0 5px;
+}
+.journey-m612 .journey-chapter-scrubber button{
+  padding:8px 12px 8px 8px;min-height:31px;border:0;border-bottom:1px solid #55798a4f;
+  box-shadow:none!important;background:transparent!important;color:#8daabe;
+  font:10px/1.2 var(--mono);letter-spacing:.01em;
+}
+.journey-m612 .journey-chapter-scrubber button>span{color:#679fc0}
+.journey-m612 .journey-chapter-scrubber button.is-current{border-bottom:2px solid #9de4ff!important;color:#e9f9ff!important}
+.journey-m612 .journey-chapter-scrubber button.is-current>span{color:#c2f1ff}
+.journey-m612 .journey-chapter-scrubber button:hover{color:#e5f9ff!important;border-bottom-color:#9de4ff}
+.journey-m612 .journey-playback-buttons{gap:7px}
+.journey-m612 .journey-playback-buttons button{font:500 10px/1.25 var(--mono);letter-spacing:.02em;min-height:33px;padding:8px 12px;border:0;border-radius:999px}
+.journey-m612 .journey-play-button{background:#8bd9fc;color:#052238;font-weight:700}
+.journey-m612 .journey-secondary-button{background:#14334a69;color:#a8d9f2}
+.journey-m612 .journey-roadmap-button{margin-left:auto;background:transparent;color:#c2e9f9;border:1px solid #55799080!important}
+.journey-m612 .journey-roadmap-button:hover{background:#25506c66}
+.journey-m612 .journey-scroll-steps{display:none!important}
+.journey-m612 .journey-roadmap{margin-top:86px}
+/* Scene 01 — UIC campus + exploratory chart. */
+.cinema-uic-art{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.cinema-campus-photo{
+  position:absolute;left:10%;top:7%;width:59%;height:72%;
+  border-radius:9px;overflow:hidden;
+  background:linear-gradient(135deg,#274b63,#0d283f 58%,#091c2e);
+  box-shadow:0 40px 95px #000a,0 0 0 1px #a9d9ef3d;
+  transform:rotate(-3deg);animation:cinemaFloat 8s ease-in-out infinite alternate;
+}
+.cinema-campus-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.68) brightness(.82);mix-blend-mode:normal}
+.cinema-campus-photo:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#04111fd4)}
+.cinema-image-caption{position:absolute;left:20px;bottom:16px;z-index:2;font:600 10px var(--mono);letter-spacing:.12em;color:#d9f2ff}
+.cinema-campus-illustration{position:absolute;inset:0;background:linear-gradient(180deg,#244d74 0%,#496b86 41%,#20364a 78%,#0b2136 100%)}
+.city-distant{position:absolute;inset:17% 3% 22%;opacity:.55;background:repeating-linear-gradient(90deg,#a9b9be55 0 17px,transparent 17px 34px);clip-path:polygon(0 73%,4% 62%,8% 72%,11% 40%,17% 38%,20% 77%,26% 53%,34% 60%,38% 18%,41% 22%,45% 72%,53% 55%,57% 66%,61% 36%,68% 40%,74% 63%,80% 25%,86% 32%,90% 57%,96% 50%,100% 65%,100% 100%,0 100%)}
+.campus-block{position:absolute;bottom:12%;height:30%;background:linear-gradient(180deg,#bdc9c4,#4b6778);box-shadow:0 12px 12px #0007}
+.campus-block:after{content:"";position:absolute;inset:9% 0 0;background:repeating-linear-gradient(90deg,#25394a 0 10px,#d0d9d1 10px 13px)}
+.campus-a{width:27%;left:7%;transform:skewY(-7deg)}.campus-b{width:40%;left:33%;height:39%;transform:skewY(5deg)}.campus-c{width:25%;right:4%;height:27%;transform:skewY(-5deg)}
+.campus-ground{position:absolute;bottom:0;height:16%;background:#2c4c4c;width:100%;opacity:.75}
+.cinema-uic-data{
+  position:absolute;right:1%;bottom:4%;width:47%;height:54%;
+  border:1px solid #95daf98f;border-radius:12px;background:#07243be0;
+  box-shadow:0 24px 65px #000b,0 0 45px #3181b034,inset 0 1px 0 #e4faff32;
+  padding:20px 20px 13px;transform:rotate(3deg);backdrop-filter:blur(14px);
+  animation:cinemaFloatB 9s ease-in-out infinite alternate;
+}
+.cinema-art-kicker{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#c4edff;font:600 10px var(--mono);letter-spacing:.12em}
+.cinema-art-index{color:#729cbd}
+.cinema-data-graph{display:block;width:100%;height:65%;margin-top:6px}
+.cinema-chart-foot{display:flex;justify-content:space-between;gap:7px;color:#7db2cc;font:9px var(--mono);letter-spacing:.02em}
+.cinema-image-disclaimer{position:absolute;right:14px;bottom:9px;color:#809eb1;font:8px var(--mono)}
+/* Scene 02 — datasets resolve into model evaluation. */
+.cinema-ensar-art{position:relative;width:100%;height:100%;display:grid;place-items:center}
+.cinema-matrix{position:absolute;left:3%;top:7%;width:58%;height:83%;display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(11,1fr);gap:5px;transform:perspective(850px) rotateY(11deg) rotateX(8deg) rotate(-6deg);mask-image:linear-gradient(90deg,#000 60%,transparent)}
+.cinema-matrix i{border-radius:2px;background:rgba(84,186,239,calc(.12 + var(--v)*.045));border:1px solid #b7eaff12;box-shadow:0 0 12px #8ae7ff11;animation:cellPulse 4s ease-in-out infinite alternate;animation-delay:calc(var(--d)*-100ms)}
+.cinema-float-stat{position:absolute;right:7%;top:17%;width:40%;text-align:left;display:flex;flex-direction:column;gap:10px;filter:drop-shadow(0 8px 40px #002f4b)}
+.cinema-float-stat>span,.cinema-float-stat small{font:10px/1.5 var(--mono);letter-spacing:.12em;color:#88c8e6}
+.cinema-float-stat strong{font:650 clamp(57px,9vw,138px)/1 var(--display);letter-spacing:-.09em;color:#e8faff}
+.cinema-float-stat strong span{color:#71c8eb}
+.cinema-ensar-mini{position:absolute;left:37%;bottom:3%;width:50%;min-height:100px;padding:17px 20px 15px 45%;border:1px solid #6abfe563;border-radius:10px;background:linear-gradient(110deg,#073254d9,#061b2cdb);box-shadow:0 16px 50px #0007;backdrop-filter:blur(12px)}
+.cinema-ensar-mini>span{color:#96d9f8;font:9px var(--mono);letter-spacing:.1em}.cinema-ensar-mini b{display:block;color:#e8f8ff;font:600 19px/1.3 var(--display);margin-top:5px}
+.mini-circles{position:absolute;inset:12px 58% 12px 12px;display:flex;gap:5px;align-items:center;justify-content:center}.mini-circles i{width:5px;height:calc(10px + var(--k)*4px);border-radius:5px;background:#8bd7f5a3}
+/* Scene 03 — five sources converge without using a timeline trajectory. */
+.cinema-komatsu-art{position:relative;width:100%;height:100%}
+.cinema-source-heading{position:absolute;left:8%;top:10%;font:10px var(--mono);letter-spacing:.14em;color:#98cde7}
+.cinema-pipeline-visual{position:absolute;left:8%;top:20%;height:66%;width:84%;display:flex;align-items:center;justify-content:space-between}
+.cinema-source{display:flex;align-items:center;gap:12px;min-width:65px;position:absolute;left:0;top:calc(var(--n,0)*17%);font:600 13px var(--mono);color:#b3def3}
+.cinema-source:nth-child(1){top:5%}.cinema-source:nth-child(2){top:25%}.cinema-source:nth-child(3){top:45%}.cinema-source:nth-child(4){top:65%}.cinema-source:nth-child(5){top:85%}
+.cinema-source i{width:33px;height:8px;border-radius:12px;background:linear-gradient(90deg,#529cce,#a1ecfa);box-shadow:0 0 19px #66d2fc6c}
+.cinema-pipe-stream{position:absolute;left:9%;top:0;width:57%;height:100%}
+.cinema-pipe-stream span{position:absolute;left:0;right:0;height:2px;top:calc(5% + (var(--s)*20%));background:linear-gradient(90deg,#5db2dc3d,#7dddfa90,#baf7ff);transform-origin:right center;animation:pipeFlow 3s linear infinite}
+.cinema-pipe-stream span:nth-child(1){--s:0;transform:rotate(15deg)}.cinema-pipe-stream span:nth-child(2){--s:1;transform:rotate(8deg)}.cinema-pipe-stream span:nth-child(3){--s:2}.cinema-pipe-stream span:nth-child(4){--s:3;transform:rotate(-8deg)}.cinema-pipe-stream span:nth-child(5){--s:4;transform:rotate(-15deg)}
+.cinema-pipe-join{position:absolute;left:65%;top:48%;height:17px;width:17px;border-radius:50%;background:#e5faff;box-shadow:0 0 36px #a5e6ffb3}
+.cinema-report{position:absolute;right:0;top:23%;width:31%;height:57%;border:1px solid #77bfec65;background:linear-gradient(150deg,#0b3550eb,#071724dd);box-shadow:0 20px 64px #0008;padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;border-radius:8px}
+.cinema-report span,.cinema-report small{color:#8acdec;font:10px var(--mono);letter-spacing:.06em}.cinema-report b{font:650 clamp(20px,2.1vw,34px)/1.15 var(--display);color:#eaf9ff}.cinema-report i{width:100%;height:5px;background:linear-gradient(90deg,#3d8abb 30%,#a0edfb 80%,transparent 80%)}
+.cinema-komatsu-measure{position:absolute;right:7%;top:-3%;display:flex;align-items:baseline;gap:14px;color:#acdff2}.cinema-komatsu-measure span,.cinema-komatsu-measure small{font:9px var(--mono);letter-spacing:.06em}.cinema-komatsu-measure strong{font:650 48px var(--display);letter-spacing:-.065em;color:#ddfaff}
+/* Scene 04 — graduate research constellation. */
+.cinema-umd-art{width:100%;height:100%;position:relative}
+.cinema-umd-cloud{position:absolute;left:12%;top:5%;height:85%;aspect-ratio:1;perspective:1100px;transform:rotate(-12deg)}
+.cinema-umd-ring{position:absolute;inset:9%;border-radius:50%;border:1px solid #8dccf073;box-shadow:0 0 20px #1a85be32;animation:orbitDrift 26s linear infinite}
+.cinema-umd-ring.ring-a{transform:rotateX(67deg)}.cinema-umd-ring.ring-b{transform:rotateY(58deg) rotateX(-33deg);animation-direction:reverse;animation-duration:33s}.cinema-umd-ring.ring-c{inset:24%;border-style:dashed;border-color:#86c9f956}
+.cinema-umd-center{position:absolute;inset:42%;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,#7ad8f965,#207dae34 56%,transparent);box-shadow:0 0 65px #69c2ef54;color:#ebfbff;font:650 33px var(--display)}
+.cinema-umd-cloud b{position:absolute;left:calc(50% + cos(var(--j)*36deg)*43%);top:calc(50% + sin(var(--j)*36deg)*43%);border-radius:50%;width:6px;height:6px;background:#9feaff;box-shadow:0 0 21px #95e5ff}
+.cinema-umd-question{position:absolute;right:4%;top:30%;width:38%;color:#f4faff;text-shadow:0 3px 26px #020b17}
+.cinema-umd-question span{font:10px var(--mono);letter-spacing:.17em;color:#a5d6ee}
+.cinema-umd-question strong{display:block;font:650 clamp(27px,4.2vw,62px)/1.05 var(--display);letter-spacing:-.06em;margin:15px 0}
+.cinema-umd-question p{margin:0;font:14px/1.6 var(--sans);color:#c3e1ef}
+/* Scene 05 — training-workflow lanes. */
+.cinema-teck-art{width:100%;height:100%;display:flex;align-items:center;gap:7%;padding:2% 6%}
+.cinema-teck-lanes{flex:1.2;min-width:0;display:flex;flex-direction:column;gap:13px;transform:perspective(780px) rotateY(11deg)}
+.cinema-teck-label{color:#acd8ed;font:11px var(--mono);letter-spacing:.14em;margin-bottom:7px}
+.cinema-teck-lane{display:flex;align-items:center;gap:14px;height:23px;color:#8dbad0;font:9px var(--mono)}.cinema-teck-lane span{width:88px;flex-shrink:0}.cinema-teck-lane i{height:3px;width:60%;background:linear-gradient(90deg,#286a9b,#78ccf4,#b2f0ff);border-radius:5px;position:relative}.cinema-teck-lane b{width:10px;height:10px;flex-shrink:0;border-radius:50%;background:#b0f0ff;box-shadow:0 0 18px #7bc8ff}
+.cinema-teck-lane:nth-child(2n) i{width:45%}.cinema-teck-lane:nth-child(3n) i{width:68%}
+.cinema-teck-result{flex:.9;min-width:0;display:flex;flex-direction:column;gap:10px;color:#effaff}
+.cinema-teck-result>span,.cinema-teck-result p{font:10px/1.4 var(--mono);letter-spacing:.1em;color:#97c9e2}
+.cinema-teck-result>div{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.cinema-teck-result small{font:600 clamp(23px,2vw,33px) var(--display);color:#8db5d0;text-decoration:line-through;text-decoration-thickness:1px}.cinema-teck-result b{font:22px var(--display);color:#a3d4ea}.cinema-teck-result strong{font:650 clamp(53px,5vw,83px)/1 var(--display);letter-spacing:-.06em}
+/* Scene 06 — actual project interface captures fan outward. */
+.cinema-projects-art{position:relative;width:100%;height:100%;perspective:1050px}
+.cinema-proj-shot{position:absolute;width:39%;height:58%;margin:0;border:1px solid #9bdef55c;border-radius:9px;overflow:hidden;background:#071623;box-shadow:0 25px 70px #000b;transition:filter .2s}
+.cinema-proj-shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.82)}
+.cinema-proj-shot figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#020b15e8);color:#e6f8ff;font:10px var(--mono);letter-spacing:.04em;padding:28px 14px 12px}
+.cinema-proj-shot.shot-a{left:10%;top:12%;transform:rotateY(12deg) rotateZ(-8deg)}
+.cinema-proj-shot.shot-b{right:8%;top:8%;transform:rotateY(-12deg) rotateZ(8deg)}
+.cinema-proj-shot.shot-c{left:33%;top:39%;transform:rotateX(7deg);z-index:3;height:53%;width:36%}
+.cinema-projects-message{position:absolute;left:1%;top:7%;font:650 clamp(32px,4vw,54px)/.91 var(--display);letter-spacing:-.08em;color:#f0fbff;z-index:5;text-shadow:0 0 35px #031525}.cinema-projects-message span{color:#82d5fc}
+/* Scene 07 — navigation is a robot simulation, not a path between career events. */
+.cinema-robotics-art{position:relative;width:100%;height:100%;display:grid;place-items:center}
+.cinema-robotics-scan{width:min(840px,93%);height:87%;max-height:400px;box-shadow:0 30px 95px #010914b4;border:1px solid #5999ba60;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#0720359c,#041522aa)}
+.cinema-robot-map{width:100%;height:100%;object-fit:cover}
+.cinema-robotics-meta{position:absolute;bottom:-1%;left:11%;right:11%;display:flex;justify-content:space-between;gap:12px;color:#a1cee6;font:10px var(--mono);letter-spacing:.13em}
+@keyframes cinemaFloat{to{transform:rotate(-2deg) translateY(-13px)}}
+@keyframes cinemaFloatB{to{transform:rotate(1deg) translateY(12px)}}
+@keyframes cinemaBreath{to{opacity:.6;transform:translate(-50%,-50%) scale(1.15)}}
+@keyframes cellPulse{to{opacity:.26}}
+@keyframes pipeFlow{to{opacity:.4}}
+@keyframes orbitDrift{to{rotate:360deg}}
+/* Tablet: keep all seven moments usable with buttons, no forced pinned scroll. */
+@media(max-width:1110px){
+ .journey-m612 .journey-scroll-film{height:auto;min-height:0}
+ .journey-m612 .journey-pin{height:auto;top:auto;position:relative;min-height:0}
+ .journey-m612 .journey-pin .journey-stage-reel{display:block;overflow:visible}
+ .journey-m612 .journey-cinema-stage{height:760px;min-height:0}
+ .journey-m612 .journey-film{min-height:0}
+ .journey-m612 .journey-viewport{min-height:0}
+ .journey-m612 .journey-scroll-film .journey-narrative{width:min(780px,88vw);left:6%;bottom:26px}
+ .journey-m612 .journey-playback{position:relative}
+ .cinema-moment-art{top:8%;height:55%}
+ .journey-m612 .journey-roadmap{margin-top:72px}
+}
+@media(max-width:720px){
+ .journey-m612{padding-top:58px}
+ .journey-m612 .journey-scroll-film{width:100vw}
+ .journey-m612 .journey-cinema-stage{height:770px}
+ .journey-m612 .journey-visual-top{left:22px;right:22px;top:17px;font-size:8px}
+ .cinema-moment-art{top:8%;width:94vw;height:45%;min-height:0}
+ .journey-m612 .journey-scroll-film .journey-narrative{left:7%;width:86%;bottom:23px}
+ .journey-m612 .journey-narrative-meta{font-size:9px}
+ .journey-m612 .journey-narrative .journey-place{font-size:9px}
+ .journey-m612 .journey-narrative h3{font-size:clamp(28px,7vw,40px)!important;max-width:22ch}
+ .journey-m612 .journey-narrative-copy p{font-size:12px;line-height:1.6}
+ .journey-m612 .journey-scene-readmore{font-size:11px;margin-top:11px}
+ .journey-m612 .journey-playback{padding:11px 16px 12px!important}
+ .journey-m612 .journey-chapter-scrubber{grid-template-columns:repeat(7,minmax(52px,1fr));overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+ .journey-m612 .journey-chapter-scrubber button{font-size:9px;min-height:36px;display:flex;flex-direction:column;gap:2px;align-items:center;padding:5px 2px}
+ .journey-m612 .journey-chapter-scrubber button strong{font-size:9px;text-align:center;overflow:visible;white-space:nowrap}
+ .journey-m612 .journey-playback-buttons{gap:5px}
+ .journey-m612 .journey-playback-buttons button{padding:8px 10px;font-size:9px}
+ .journey-m612 .journey-roadmap-button{margin-left:0!important}
+ .cinema-campus-photo{left:3%;top:3%;width:76%;height:64%}
+ .cinema-uic-data{right:0;bottom:2%;height:46%;width:61%;padding:12px}
+ .cinema-art-kicker{font-size:8px}.cinema-chart-foot,.cinema-image-disclaimer{font-size:7px}
+ .cinema-float-stat{right:0;width:52%;top:14%}.cinema-float-stat strong{font-size:clamp(50px,11vw,83px)}
+ .cinema-float-stat>span,.cinema-float-stat small{font-size:8px}.cinema-matrix{left:-3%;width:64%}
+ .cinema-ensar-mini{left:11%;width:86%;bottom:0;padding:12px 14px 12px 36%}.cinema-ensar-mini b{font-size:15px}
+ .cinema-pipeline-visual{left:4%;width:92%}.cinema-report{padding:8px;width:37%;height:52%}.cinema-report b{font-size:17px}.cinema-report small,.cinema-report span{font-size:7px}
+ .cinema-komatsu-measure{right:2%;top:0}.cinema-komatsu-measure span,.cinema-komatsu-measure small{display:none}
+ .cinema-komatsu-measure strong{font-size:38px}
+ .cinema-umd-cloud{left:-4%;top:12%;height:70%}.cinema-umd-question{right:0;top:37%;width:50%}.cinema-umd-question strong{font-size:28px}.cinema-umd-question p{font-size:12px}
+ .cinema-teck-art{padding:0;gap:7px}.cinema-teck-lanes{gap:8px}.cinema-teck-lane span{font-size:7px;width:55px}.cinema-teck-result{min-width:0}.cinema-teck-result strong{font-size:42px}.cinema-teck-result small{font-size:18px}.cinema-teck-result>span{font-size:8px}
+ .cinema-projects-message{font-size:28px}.cinema-proj-shot.shot-c{top:43%}
+ .cinema-robotics-scan{width:100%;height:74%}.cinema-robotics-meta{font-size:8px;left:0;right:0}
+}
+@media(max-width:390px){
+ .journey-m612 .journey-cinema-stage{height:835px}
+ .journey-m612 .journey-narrative h3{font-size:29px!important}
+ .cinema-projects-message{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinema-halo,.cinema-campus-photo,.cinema-uic-data,.cinema-matrix i,.cinema-pipe-stream span,.cinema-umd-ring{animation:none!important}
+ .cinema-moment{will-change:auto}
+ .journey-m612 .journey-playback{backdrop-filter:none}
+}
+
+/* Fit high-value content above the fold on short desktop viewports. */
+@media(max-height:780px) and (min-width:1111px){
+ .cinema-moment-art{top:8%;height:51%;min-height:245px}
+ .journey-m612 .journey-scroll-film .journey-narrative{bottom:12px}
+ .journey-m612 .journey-narrative h3{font-size:clamp(30px,3.1vw,44px)!important}
+ .journey-m612 .journey-narrative-copy p{font-size:12px;line-height:1.5}
+}
+@media(max-width:720px){
+ .cinema-float-stat{right:2%;width:61%}
+ .cinema-float-stat strong{font-size:clamp(39px,9.5vw,57px)}
+}
+
+.journey-m612 .journey-skip-top{margin-left:auto;flex:0 0 auto;color:#b8e5f8;font:600 11px var(--sans);text-decoration:none;border-bottom:1px solid #6093b2;padding:4px 0}
+.journey-m612 .journey-skip-top:hover{color:white;border-color:white}
+@media(max-width:720px){.journey-m612 .journey-skip-top{font-size:10px}}
+
+/* The pointer only adds gentle camera depth; scrolling still owns chapter progression. */
+.cinema-moment-art{translate:calc(var(--cinema-pointer-x,0) * 10px) calc(var(--cinema-pointer-y,0) * 7px);transition:translate .2s ease-out}
+@media(prefers-reduced-motion:reduce){.cinema-moment-art{transition:none!important;translate:0 0}}

@@ -1,0 +1,130 @@
+/* M6.40 — All eight neuron families are visible; the detail reader sits below
+   rather than competing with the circuit for width. Retain the M6.39 palette. */
+#engine .skill-v3-module{
+  display:flex!important;
+  flex-direction:column!important;
+  grid-template-columns:none!important;
+}
+#engine .skill-v3-module .skill-atlas-stage{
+  width:100%;border-right:0!important;
+  border-bottom:1px solid #315f7e;
+}
+#engine .skill-v3-module .skill-v3-viewport{
+  scroll-margin-top:78px;
+}
+#engine .skill-v3-module .skill-column{
+  padding:20px 9px 9px 11px;
+  background:linear-gradient(90deg,rgba(11,44,69,.29),rgba(6,28,48,.13) 96%);
+  box-shadow:inset 0 5px 22px rgba(31,92,136,.05);
+}
+#engine .skill-v3-module .skill-column>span{font-size:clamp(10px,.76vw,12px)}
+#engine .skill-v3-module .skill-column>small{font-size:10px;margin-top:5px}
+#engine .skill-v3-module .skill-v3-node{
+  height:53px!important;min-height:53px!important;max-height:53px!important;
+  grid-template-columns:9px minmax(0,1fr);
+  gap:1px 5px;padding:6px 6px 5px 8px;
+  transform:translateY(-50%);
+}
+#engine .skill-v3-module .skill-v3-node .skill-v3-label{
+  font:700 clamp(10px,.72vw,12px)/1.13 'DM Sans',sans-serif;
+  max-height:38px;
+}
+#engine .skill-v3-module .skill-v3-node small{font-size:8px}
+#engine .skill-v3-module .skill-v3-node .skill-v3-beacon{width:7px;height:7px}
+#engine .skill-v3-module .skill-v3-footer{padding:12px 16px}
+#engine .skill-v3-module .skill-v3-panel{
+  display:block;position:relative!important;top:auto!important;right:auto!important;
+  width:100%!important;max-width:none!important;max-height:none!important;
+  overflow:visible!important;align-self:stretch;
+  padding:30px clamp(22px,4.5vw,68px) 33px!important;
+  border:0!important;border-radius:0!important;
+  border-top:1px solid #37698c!important;
+  background:radial-gradient(ellipse at 80% 10%,rgba(17,74,110,.22),transparent 60%),linear-gradient(120deg,#0a2438,#061624 78%)!important;
+  box-shadow:none!important;
+  scroll-margin-top:84px;
+}
+#engine .skill-v3-module.skill-v3-has-focus .skill-v3-panel{
+  position:relative!important;inset:auto!important;
+}
+#engine .skill-detail-kicker{
+  margin:0 0 13px;color:#83c8ec;
+  font:700 11px/1.5 'DM Sans',sans-serif;
+  letter-spacing:.075em;text-transform:uppercase;
+}
+#engine .skill-detail-separator{color:#4d809f;margin:0 8px}
+#engine .skill-v3-panel h3{
+  margin:0 0 12px;font:800 clamp(25px,2.5vw,37px)/1.14 'DM Sans',sans-serif;
+  letter-spacing:-.035em;
+}
+#engine .skill-v3-panel .network-focus-copy{max-width:850px;font-size:14px;line-height:1.75;margin:0 0 18px}
+#engine .skill-detail-heading{display:flex;gap:22px;justify-content:space-between;align-items:start;padding-bottom:19px}
+#engine .skill-detail-heading>div:first-child{max-width:850px}
+#engine .skill-detail-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(22px,4vw,70px);align-items:start}
+#engine .skill-detail-layout.skill-detail-intro{align-items:center}
+#engine .skill-detail-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+#engine .skill-detail-controls button{
+  cursor:pointer;white-space:nowrap;background:#0b3049;border:1px solid #4e91b8;
+  border-radius:4px;color:#d3f0ff;padding:11px 15px;
+  font:700 12px 'DM Sans',sans-serif;
+}
+#engine .skill-detail-controls button:hover,#engine .skill-detail-controls button:focus-visible{background:#165373;border-color:#9cdefd}
+#engine .skill-v3-panel .skill-v3-panel-group{border-top:1px solid #2d607f;padding:17px 0}
+#engine .skill-v3-panel .skill-v3-panel-group>strong{display:block;margin-bottom:10px;font-size:11px}
+#engine .skill-v3-panel .skill-v3-panel-group>strong span{color:#719db8}
+#engine .skill-detail-chips{display:flex;flex-wrap:wrap;gap:8px}
+#engine .skill-v3-panel .skill-detail-chips button{
+  display:flex;flex-direction:column;gap:4px;
+  border-radius:4px;padding:9px 12px;min-height:36px;
+  font-size:12px;line-height:1.3;
+}
+#engine .skill-v3-panel .skill-detail-chips button small{font:500 10px 'DM Sans',sans-serif;color:#8ab9d7}
+#engine .skill-v3-panel .network-focus-result{max-width:420px;margin-bottom:15px;padding:9px 0 15px}
+#engine .skill-v3-panel .network-focus-result strong{font-size:clamp(22px,2.5vw,33px)}
+#engine .skill-v3-panel .skill-proof-note{margin-top:15px;max-width:650px}
+#engine .skill-v3-panel .skill-explore-start{max-width:240px;margin-top:8px}
+#engine .skill-detail-summary{border-left:1px solid #2f5a77;padding:5px 0 5px 30px;color:#a8cadd;font:400 13px/1.75 'DM Sans',sans-serif}
+#engine .skill-detail-summary p{margin:7px 0 0}
+#engine .skill-detail-summary .skill-v3-stats{margin:0 0 12px;max-width:490px}
+#engine .skill-detail-summary strong{color:#81d3ff}
+@media(max-width:1180px){
+  /* Long titles are more legible as grouped selectable cards on narrow screens. */
+  #engine .skill-v3-module .skill-v3-viewport{display:none!important}
+  #engine .skill-v3-module .skill-v3-mobile{display:grid!important;gap:15px;padding:15px}
+  #engine .skill-v3-mobile-group{padding:14px;border:1px solid #2b5e7b;background:linear-gradient(110deg,#081e32,#061524)}
+  #engine .skill-v3-mobile-group h3{margin:0 0 12px;font:800 13px 'DM Sans',sans-serif;color:#a4def9}
+  #engine .skill-v3-mobile-group>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  #engine .skill-v3-mobile-group button{display:flex;flex-direction:column;gap:4px;min-height:50px;padding:10px;text-align:left;cursor:pointer;border:1px solid #366b8c;border-radius:4px;background:#0b2d46;color:#e2f4ff;font:700 12px/1.3 'DM Sans',sans-serif}
+  #engine .skill-v3-mobile-group button small{font:500 10px 'DM Sans',sans-serif;color:#83b4d2}
+  #engine .skill-v3-mobile-group button:hover,#engine .skill-v3-mobile-group button[aria-pressed="true"]{border-color:#90d8ff;background:#175275}
+}
+@media(max-width:760px){
+  #engine .skill-detail-layout{grid-template-columns:1fr;gap:10px}
+  #engine .skill-detail-heading{flex-direction:column;gap:7px}
+  #engine .skill-detail-controls{justify-content:flex-start}
+  #engine .skill-detail-summary{border-left:0;border-top:1px solid #2f5a77;padding:17px 0}
+  #engine .skill-v3-module .skill-v3-panel{padding:22px 17px 26px!important}
+  #engine .skill-v3-mobile-group>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:430px){
+  #engine .skill-v3-module .skill-v3-mobile{padding:10px}
+  #engine .skill-v3-mobile-group{padding:10px}
+  #engine .skill-v3-mobile-group>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){
+  #engine .skill-v3-module .skill-v3-node{transition:none!important}
+}
+/* Keep the family title and its descriptor on separate, non-overlapping lines. */
+#engine .skill-v3-module .skill-column>span{
+  display:block;
+  width:100%;
+  white-space:normal;
+  overflow-wrap:normal;
+  line-height:1.23;
+}
+#engine .skill-v3-module .skill-column>small{
+  display:block;
+  width:100%;
+  margin-top:4px;
+  line-height:1.25;
+  white-space:normal;
+}

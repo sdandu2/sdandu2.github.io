@@ -1,0 +1,401 @@
+/* Milestone 6.17 — premium clarity pass.
+   Limited to the 3D stack, career-film presentation, and network idle state.
+   Flat readable type is never perspective-rotated. */
+
+/* 1 / Career film: images form one composition, with a consistent visual rhythm.
+   Clean separation replaces competing skewed photo cards. */
+.journey-m612 .journey-film {
+  background:radial-gradient(ellipse 48% 45% at 52% 32%,#0c2b43 0%,#071b2b 50%,#030d17 100%)!important;
+}
+.journey-m612 .cinema-orbit {opacity:.36}
+.journey-m612 .cinema-halo {opacity:.44}
+.journey-m612 .cinema-moment-art {
+  width:min(1230px,90vw);
+  top:4%;
+  height:65%;
+  min-height:0;
+}
+.journey-m612 .cinema-editorial {
+  perspective:none;
+  display:block;
+}
+.journey-m612 .cinema-editorial::before {
+  background:radial-gradient(ellipse at 50% 40%,rgba(74,169,213,.12),transparent 70%);
+  opacity:.75;
+  filter:blur(20px);
+}
+.journey-m612 .cinema-editorial-ring {opacity:.17}
+.journey-m612 .cinema-editorial-primary,
+.journey-m612 .cinema-editorial-secondary {
+  animation:none!important;
+  translate:none!important;
+  transform:none!important;
+  overflow:hidden;
+  border-radius:14px;
+  border:1px solid rgba(133,203,237,.25);
+  background:linear-gradient(125deg,#0c2538,#061624);
+  box-shadow:0 22px 63px rgba(0,3,10,.55),inset 0 1px rgba(238,252,255,.08);
+  transition:border-color .22s ease,box-shadow .22s ease;
+}
+.journey-m612 .cinema-editorial-primary {
+  position:absolute;
+  left:3%!important;
+  top:6%!important;
+  width:61%!important;
+  height:83%!important;
+}
+.journey-m612 .cinema-editorial-secondary {
+  position:absolute;
+  left:66%!important;
+  right:auto!important;
+  top:14%!important;
+  width:31%!important;
+  height:67%!important;
+}
+.journey-m612 .cinema-editorial-primary::after {
+  background:linear-gradient(180deg,transparent 70%,rgba(3,12,22,.18));
+}
+.journey-m612 .cinema-editorial-secondary::after {
+  background:linear-gradient(180deg,transparent 72%,rgba(3,12,22,.12));
+}
+.journey-m612 .cinema-editorial-primary img,
+.journey-m612 .cinema-editorial-secondary img {
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(.91) brightness(.95);
+  transform:none!important;
+}
+/* Preserve true white branding rather than applying cinematic darkening. */
+.journey-m612 .cinema-theme-ensar .cinema-editorial-primary img {
+  object-fit:contain;
+  filter:none;
+  padding:6%;
+}
+.journey-m612 .cinema-theme-umd .cinema-editorial-primary img {object-position:center 40%}
+.journey-m612 .cinema-theme-komatsu .cinema-editorial-primary img {object-position:47% 50%}
+.journey-m612 .cinema-theme-robotics .cinema-editorial-secondary img {object-position:center}
+.journey-m612 .journey-scroll-film .journey-narrative {
+  bottom:clamp(23px,3.4vh,43px);
+  left:max(7vw,42px);
+  width:min(1080px,86vw);
+}
+.journey-m612 .cinema-copy-deck {min-height:clamp(192px,25vh,255px)}
+.journey-m612 .cinema-copy-slide {
+  pointer-events:none;
+  transition:none;
+}
+.journey-m612 .cinema-copy-slide .journey-narrative-copy p {
+  font-size:clamp(13px,1.04vw,15px);
+  line-height:1.56;
+  max-width:82ch;
+}
+.journey-m612 .cinema-title-letter {will-change:opacity,transform}
+.journey-m612 .journey-playback {
+  background:rgba(4,16,28,.93)!important;
+  padding:7px max(26px,4vw) 10px!important;
+}
+.journey-m612 .journey-playback-track {height:2px;margin-bottom:6px}
+.journey-m612 .journey-chapter-scrubber {margin-bottom:3px}
+.journey-m612 .journey-chapter-scrubber button {min-height:28px;padding:6px 6px}
+.journey-m612 .journey-playback-buttons {gap:8px}
+.journey-m612 .journey-playback-buttons button {
+  border-radius:5px;
+  padding:8px 12px;
+  min-height:33px;
+}
+.journey-m612 .journey-roadmap-button {border-radius:5px!important}
+.journey-m612 .cinema-keyboard-hint {opacity:.72}
+
+/* 2 / Stack as a sculptural object. The action bar is quiet and independent.
+   Every layer has a bright top rim, a thin frosted top face, and real depth. */
+.journey-cinematic .journey-stack-layout {
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  background:linear-gradient(140deg,#071522,#04101a);
+  border-color:rgba(113,164,198,.22);
+  min-height:680px;
+}
+.journey-cinematic .journey-stack-stage {
+  padding:28px 31px 24px;
+  background:radial-gradient(ellipse 70% 34% at 48% 70%,rgba(44,138,184,.12),transparent 88%),
+    linear-gradient(155deg,#071825 0%,#030c15 100%);
+  overflow:hidden;
+}
+.journey-cinematic .journey-stack-stage::before {
+  z-index:0;
+  inset:36% 7% 8%;
+  opacity:.56;
+  background:radial-gradient(ellipse at 50% 47%,rgba(40,116,165,.20),transparent 65%);
+}
+.journey-cinematic .journey-stack-stage::after {display:none}
+.journey-cinematic .journey-stack-legend {
+  color:#7ba9c0;
+  letter-spacing:.11em;
+  font:9px/1.4 var(--mono);
+}
+.journey-cinematic .journey-stack-toolbar {
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:6px 18px;
+  margin:20px 0 8px;
+  padding:9px 0 12px;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid rgba(103,157,187,.19);
+  border-radius:0;
+  box-shadow:none;
+}
+.journey-cinematic .journey-stack-toolbar-heading {
+  margin:0;
+  color:#7ba8c0;
+  font:9px/1.3 var(--mono);
+  letter-spacing:.105em;
+}
+.journey-cinematic .journey-stack-toolbar-heading strong {font-size:12px;color:#c7edff}
+.journey-cinematic .journey-stack-toolbar-actions {display:flex;gap:6px;justify-content:flex-end;flex-wrap:nowrap}
+.journey-cinematic .stack-control {
+  min-height:34px;
+  border:1px solid rgba(116,167,196,.37);
+  border-radius:5px;
+  background:rgba(12,33,49,.56);
+  color:#c4e3f3;
+  padding:8px 11px;
+  font:600 10px/1.15 var(--sans);
+  box-shadow:none;
+}
+.journey-cinematic .stack-control:hover:not(:disabled),
+.journey-cinematic .stack-control:focus-visible {background:#153a52;border-color:#98dfff;color:#f0fbff}
+.journey-cinematic .stack-control-primary {
+  flex:none;
+  background:rgba(81,174,223,.19);
+  border-color:rgba(115,202,240,.66);
+  color:#d5f3ff;
+  min-width:121px;
+}
+.journey-cinematic .stack-control-primary:hover:not(:disabled) {background:#92dafe;color:#041725}
+.journey-cinematic .stack-mode {
+  grid-column:1 / -1;
+  margin:0;
+  gap:7px;
+  color:#9ec9dc;
+  font-size:10px;
+}
+.journey-cinematic .stack-mode-dot {width:6px;height:6px;box-shadow:0 0 10px #48afdd}
+.journey-cinematic .stack-mode-hint {color:#668fa7}
+
+.journey-cinematic .journey-stack-list {
+  max-width:760px;
+  margin:39px auto 4px;
+  height:566px;
+  isolation:isolate;
+  perspective:none;
+  overflow:visible;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer {
+  --depth-step:65px;
+  --side-depth:12px;
+  top:30px;
+  left:30px;
+  right:51px;
+  height:69px;
+  min-height:69px;
+  width:auto;
+  padding:12px 18px;
+  grid-template-columns:34px minmax(0,1fr) 8px;
+  gap:14px;
+  background:linear-gradient(112deg,rgba(19,59,82,.91) 0%,rgba(10,40,62,.94) 57%,rgba(7,27,45,.96) 100%);
+  border:1px solid rgba(116,186,225,.39);
+  border-top-color:rgba(195,238,254,.73);
+  border-bottom-color:rgba(77,148,185,.62);
+  border-radius:4px;
+  box-shadow:inset 0 1px rgba(221,244,255,.09),inset 0 -2px rgba(6,15,28,.3),0 16px 27px rgba(1,6,15,.31);
+  transform:translate3d(calc(var(--stack-depth) * 11px),calc(var(--stack-depth) * var(--depth-step)),0);
+  will-change:transform,opacity;
+  transition:transform .66s cubic-bezier(.2,.8,.18,1),opacity .48s ease,visibility .48s ease,
+    border-color .25s ease,background .25s ease,box-shadow .3s ease;
+}
+/* The trapezoid top facet creates real perspective without skewing typography. */
+.journey-cinematic .journey-stack-list .journey-stack-layer::before {
+  position:absolute;
+  left:0;right:-9px;top:-25px;bottom:auto;
+  width:auto;height:25px;
+  z-index:1;
+  clip-path:polygon(22px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+  background:linear-gradient(175deg,rgba(119,195,231,.33),rgba(48,111,148,.26) 42%,rgba(9,40,62,.95) 100%),
+    repeating-linear-gradient(90deg,rgba(128,216,255,.07) 0 1px,transparent 1px 44px);
+  opacity:.94;
+  border:0;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer::after {
+  position:absolute;
+  top:-1px;
+  right:calc(-1 * var(--side-depth));
+  width:var(--side-depth);
+  height:calc(100% + 9px);
+  z-index:1;
+  clip-path:polygon(0 0,100% 8px,100% calc(100% - 7px),0 100%);
+  background:linear-gradient(92deg,#125274 0%,#071e2f 100%);
+  opacity:.93;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-thickness {
+  height:9px;bottom:-9px;
+  clip-path:polygon(0 0,100% 0,calc(100% - 7px) 100%,10px 100%);
+  background:linear-gradient(180deg,#195372,#08263c);
+  opacity:.95;
+  box-shadow:0 6px 11px rgba(0,0,0,.32);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-glass-top {
+  top:-23px;left:26px;right:15px;height:1px;z-index:3;
+  background:linear-gradient(90deg,transparent,rgba(190,238,255,.69) 16%,rgba(143,202,238,.24) 74%,transparent);
+  box-shadow:0 0 7px rgba(130,208,245,.2);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-count {
+  font-size:19px;
+  font-weight:650;
+  color:#94cce7;
+  text-shadow:none;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-name {
+  font-size:clamp(16px,1.4vw,19px);
+  letter-spacing:-.035em;
+  color:#eaf5fd;
+  font-weight:650;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-signal {
+  font-size:9px;letter-spacing:.055em;color:#8aafc5;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-dot {
+  width:6px;height:6px;background:#8bd4f2;box-shadow:0 0 8px rgba(110,198,238,.33);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected {
+  z-index:50;
+  border-color:rgba(194,244,255,.8);
+  background:linear-gradient(110deg,rgba(41,106,145,.93),rgba(14,60,89,.96) 55%,rgba(10,42,64,.97));
+  box-shadow:inset 0 1px rgba(238,253,255,.22),0 17px 35px rgba(0,5,16,.48),0 0 37px rgba(53,147,198,.10);
+  transform:translate3d(-8px,-9px,0);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected .journey-stack-glass-top {
+  box-shadow:0 0 10px rgba(122,216,253,.41);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:hover,
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:focus-visible {
+  transform:translate3d(-10px,-14px,0);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer:hover:not(.is-removed):not(.is-selected),
+.journey-cinematic .journey-stack-list .journey-stack-layer:focus-visible:not(.is-removed):not(.is-selected) {
+  transform:translate3d(calc(var(--stack-depth) * 11px - 4px),calc(var(--stack-depth) * var(--depth-step) - 5px),0);
+  border-color:rgba(174,230,255,.75);
+  background:linear-gradient(110deg,rgba(24,76,107,.94),rgba(11,45,71,.96));
+  outline:0;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer:focus-visible {outline:2px solid #a4e5ff!important;outline-offset:3px}
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-removed {
+  transform:translate3d(-240px,-92px,0) rotate(-6deg);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.journey-cinematic .journey-stack-foot {margin:16px 0 0;opacity:.66}
+.journey-cinematic .journey-stack-readout {
+  padding:clamp(24px,2.4vw,38px);
+  background:linear-gradient(158deg,rgba(7,26,41,.73),rgba(4,15,24,.89));
+}
+.journey-cinematic .journey-stack-readout h4 {
+  font-size:clamp(31px,2.7vw,44px);
+  line-height:1.14;
+}
+.journey-cinematic .journey-stack-longform p {font-size:13px;line-height:1.75;color:#c4d9e8}
+
+/* 3 / Network: all nodes remain visible at rest, but 53 connections no longer
+   compete for attention. Any focused project/capability gets the full trace. */
+.project-network .network-overview .network-edge {
+  opacity:.14!important;
+  stroke-width:1.05!important;
+  filter:none!important;
+}
+.project-network .network-overview .network-edge-flow {
+  opacity:.035!important;
+  filter:none!important;
+}
+.project-network .network-overview .network-node {
+  opacity:.86;
+  border-color:rgba(105,172,207,.40);
+  box-shadow:0 6px 18px rgba(0,5,17,.23),inset 0 1px rgba(196,231,250,.065);
+}
+.project-network .network-overview .network-node-orb {box-shadow:0 0 6px rgba(91,185,242,.4)}
+.project-network .network-node.is-related:not(.is-selected),
+.project-network .network-node.is-preview {opacity:1}
+.project-network .network-edge.is-related {opacity:.88!important;stroke-width:2.05!important}
+.project-network .network-edge-flow.is-related {opacity:.81!important}
+.project-network .network-edge.is-muted {opacity:.04!important}
+.project-network .network-edge-flow.is-muted {opacity:0!important}
+
+/* 4 / Responsive design. Keep stack interaction and full-copy panel legible. */
+@media(max-width:1150px) {
+  .journey-cinematic .journey-stack-layout {grid-template-columns:1fr}
+  .journey-cinematic .journey-stack-list{max-width:720px}
+  .journey-m612 .cinema-moment-art{top:6%;height:58%}
+}
+@media(max-width:720px) {
+  .journey-m612 .journey-cinema-stage {height:740px}
+  .journey-m612 .cinema-moment-art {top:8%;height:44%;width:94vw}
+  .journey-m612 .cinema-editorial-primary {
+    left:0!important;top:3%!important;width:64%!important;height:85%!important;
+    border-radius:9px;
+  }
+  .journey-m612 .cinema-editorial-secondary {
+    left:67%!important;right:auto!important;top:16%!important;
+    width:33%!important;height:60%!important;border-radius:8px;
+  }
+  .journey-m612 .journey-scroll-film .journey-narrative {
+    left:6%;width:88%;bottom:27px;
+  }
+  .journey-m612 .cinema-copy-deck{min-height:280px}
+  .journey-m612 .cinema-copy-slide h3{font-size:clamp(27px,6.7vw,38px)!important}
+  .journey-m612 .cinema-copy-slide .journey-narrative-copy p{font-size:12px;line-height:1.52}
+  .journey-m612 .journey-playback {padding:8px 14px 10px!important}
+  .journey-m612 .journey-chapter-scrubber button {padding:6px 2px;font-size:9px}
+  .journey-m612 .journey-chapter-scrubber button>strong {font-size:9px}
+  .journey-cinematic .journey-stack-stage {padding:22px 16px}
+  .journey-cinematic .journey-stack-toolbar {grid-template-columns:1fr}
+  .journey-cinematic .journey-stack-toolbar-actions {justify-content:stretch}
+  .journey-cinematic .stack-control{flex:1;padding:8px 7px;min-width:0;font-size:9px}
+  .journey-cinematic .journey-stack-list{height:499px;margin:31px auto 0}
+  .journey-cinematic .journey-stack-list .journey-stack-layer {
+    --depth-step:61px;
+    --side-depth:9px;
+    top:30px;left:7px;right:29px;
+    height:62px;min-height:62px;
+    padding:9px 10px;
+    grid-template-columns:24px minmax(0,1fr) 7px;
+    gap:7px;
+    transform:translate3d(calc(var(--stack-depth) * 3px),calc(var(--stack-depth) * var(--depth-step)),0)!important;
+  }
+  .journey-cinematic .journey-stack-list .journey-stack-layer::before {
+    height:16px;top:-16px;left:0;right:-5px;
+    clip-path:polygon(15px 0,100% 0,calc(100% - 5px) 100%,0 100%);
+  }
+  .journey-cinematic .journey-stack-list .journey-stack-layer::after{height:calc(100% + 7px)}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-glass-top{top:-15px;left:14px;right:12px}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-count{font-size:15px}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-name{font-size:13px}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-signal{font-size:8px}
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-selected{transform:translate3d(-2px,-7px,0)!important}
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:hover,
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:focus-visible{transform:translate3d(-2px,-9px,0)!important}
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-removed{transform:translate3d(-170px,-61px,0) rotate(-5deg)!important}
+  .journey-cinematic .journey-stack-readout{padding:24px 20px}
+}
+@media(max-width:390px){
+ .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-name{font-size:12px}
+ .journey-m612 .cinema-copy-deck{min-height:300px}
+}
+@media(prefers-reduced-motion:reduce){
+ .journey-cinematic .journey-stack-list .journey-stack-layer{transition:none!important}
+ .journey-m612 .cinema-editorial-primary,.journey-m612 .cinema-editorial-secondary{animation:none!important}
+ .project-network .network-overview .network-edge-flow{opacity:0!important;animation:none!important}
+}
+/* A broken secondary image should never be labeled as a quadruped photo for
+   unrelated chapters. The specific source remains documented in image notes. */
+.journey-m612 .cinema-editorial-secondary.image-unavailable::before {
+  content:'SECONDARY IMAGE UNAVAILABLE';
+}

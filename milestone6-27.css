@@ -1,0 +1,25 @@
+/* Milestone 6.27 — Final content and navigation cleanup.
+   Restores no visual redesign; it groups journey actions and education text. */
+.hero-career-status{display:flex;flex-wrap:wrap;column-gap:16px;row-gap:2px}
+.hero-career-status .hero-degree{display:inline-block;vertical-align:top;max-width:100%}
+.hero-career-status .hero-degree-ms{white-space:nowrap}
+.journey-m612 .journey-navigation-shortcuts{
+  display:flex;align-items:center;justify-content:flex-end;
+  gap:8px;margin-left:auto;flex-wrap:wrap;
+}
+.journey-m612 .journey-navigation-shortcuts .journey-roadmap-button{margin-left:0}
+.journey-m612 .journey-navigation-shortcuts .journey-replay-control{
+  background:rgba(24,63,88,.5);color:#c9e9f7;border:1px solid #638da377!important;
+}
+.journey-m612 .journey-navigation-shortcuts .journey-replay-control:hover{background:#214d69}
+@media(max-width:900px){
+  .hero-career-status .hero-degree-ms{white-space:normal}
+}
+@media(max-width:720px){
+  .journey-m612 .journey-navigation-shortcuts{margin-left:0;width:100%;justify-content:flex-end}
+  .journey-m612 .journey-navigation-shortcuts button{flex:0 1 auto}
+}
+@media(max-width:380px){
+  .journey-m612 .journey-navigation-shortcuts{justify-content:stretch}
+  .journey-m612 .journey-navigation-shortcuts button{flex:1 1 120px}
+}

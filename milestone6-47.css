@@ -1,0 +1,22 @@
+/* M6.47 — more breathable cards and forward-only skill exploration.
+   The graph geometry is set in skill-network-v3.mjs; CSS coordinates match
+   the 62px actual rendered button height used by its SVG endpoints. */
+#engine .skill-v3-module .skill-atlas-canvas {min-width:2020px}
+#engine .skill-v3-module .skill-v3-node {height:62px!important;min-height:62px!important;max-height:62px!important}
+#engine .skill-v3-module .skill-v3-node.is-selected {outline:2px solid #d4f6ff;outline-offset:-3px}
+#engine .skill-v3-module .skill-v3-node.is-related:not(.is-selected) {border-color:#a3dfff}
+#engine .skill-v3-module[data-trace-direction="forward"] .skill-v42-focus-edge .skill-v42-focus-front {stroke:#bcf3ff;stroke-width:3.5}
+#engine .skill-v47-next-note {font:500 12px/1.7 'DM Sans',sans-serif;color:#acd0e3;margin:10px 0 16px;max-width:560px}
+#engine .skill-v47-next .skill-detail-chips {display:flex;gap:9px;flex-wrap:wrap}
+#engine .skill-v47-next .skill-detail-chips button {text-align:left}
+#engine .skill-v47-next .skill-detail-chips button span {color:#83cff7;margin-left:5px}
+#engine .skill-v47-next {border-left:2px solid rgba(95,205,255,.35);padding-left:18px}
+@media(max-width:850px){#engine .skill-v47-next{border-left:0;padding-left:0;border-top:1px solid #346c89;padding-top:14px}}
+@media(prefers-reduced-motion:reduce){#engine .skill-v3-module .skill-v42-focus-pulse {animation:none!important;display:none!important}}
+
+/* Explicit guidance for the deliberate wide graph on ordinary laptops.
+   Let the graph scroll inside its viewport; never widen the entire page. */
+#engine .skill-v47-laptop-hint {display:none;background:#061d2f;color:#91c9e6;border:1px solid #2d6787;border-bottom:0;margin:0;padding:8px 16px;font:750 10px/1.35 'DM Mono',monospace;letter-spacing:.045em}
+#engine .skill-v47-laptop-hint span {color:#bcecff;font-size:16px;vertical-align:-1px;margin-left:8px}
+@media(min-width:761px) and (max-width:2049px) {#engine .skill-v47-laptop-hint{display:block}}
+#engine .skill-v3-module .skill-v3-viewport {overscroll-behavior-x:contain}

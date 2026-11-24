@@ -1,0 +1,16 @@
+/* M6.14 — approved seven-scene image compositions; only cinematic film styles */
+.journey-m612 .cinema-theme-ensar .cinema-editorial-primary{background:#eff5f9;border-color:#8dd9ff66}
+.journey-m612 .cinema-theme-ensar .cinema-editorial-primary img{object-fit:contain;object-position:center;filter:none;padding:7% 9%}
+.journey-m612 .cinema-theme-ensar .cinema-editorial-primary:after{background:linear-gradient(180deg,transparent 65%,rgba(5,25,40,.09))}
+.journey-m612 .cinema-theme-ensar .cinema-editorial-primary figcaption{color:#0c4c77;text-shadow:none}
+.journey-m612 .cinema-theme-umd .cinema-editorial-primary img{object-position:52% 42%;filter:saturate(.92) brightness(.92)}
+.journey-m612 .cinema-theme-komatsu .cinema-editorial-primary img{object-position:47% 50%;filter:saturate(.91) brightness(.92)}
+.journey-m612 .cinema-theme-robotics .cinema-editorial-primary img{object-position:center;transform:none}
+.journey-m612 .cinema-theme-projects .cinema-editorial-primary img{object-position:center}
+.journey-m612 .cinema-editorial-primary.image-unavailable,.journey-m612 .cinema-editorial-secondary.image-unavailable{background:radial-gradient(ellipse at center,#17394f,#071826 70%)}
+.journey-m612 .cinema-editorial-primary.image-unavailable:before,.journey-m612 .cinema-editorial-secondary.image-unavailable:before{content:'SOURCE IMAGE UNAVAILABLE';position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:10px/1.4 var(--mono);letter-spacing:.12em;color:#8db7d1}
+.journey-m612 .cinema-editorial-secondary.image-unavailable:before{content:'QUADRUPED PHOTO · SOURCE UNAVAILABLE'}
+@media (max-width:720px){
+ .journey-m612 .cinema-theme-ensar .cinema-editorial-primary img{padding:8%}
+ .journey-m612 .cinema-editorial-primary.image-unavailable:before,.journey-m612 .cinema-editorial-secondary.image-unavailable:before{font-size:8px}
+}

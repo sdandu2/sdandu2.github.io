@@ -1,0 +1,243 @@
+/* M6.18 — true world-space glass plates rendered via WebGL.
+   Only visual stack surfaces are 3D. HTML labels and long-form text stay
+   normal untransformed type and are accessible without WebGL. */
+.journey-cinematic .journey-stack-layout {
+  grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);
+  min-height:750px;
+  border:1px solid rgba(125,195,232,.24);
+  background:#03101b;
+}
+.journey-cinematic .journey-stack-stage {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  overflow:hidden;
+  padding:24px 27px 23px;
+  background:radial-gradient(ellipse 57% 41% at 51% 48%,rgba(33,106,150,.23),transparent 83%),
+    radial-gradient(ellipse 65% 19% at 52% 81%,rgba(60,142,187,.10),transparent 80%),
+    linear-gradient(155deg,#061827,#020912 100%);
+}
+.journey-cinematic .journey-stack-stage::before {
+  content:'';
+  position:absolute;
+  z-index:0;
+  inset:24% 10% 14%;
+  border:none;
+  opacity:.55;
+  background:radial-gradient(ellipse at 50% 60%,rgba(42,161,219,.19),transparent 50%);
+  transform:none;
+  pointer-events:none;
+}
+.journey-cinematic .journey-stack-stage::after {display:none}
+.journey-cinematic .journey-stack-legend {
+  order:1;
+  display:flex;
+  position:relative;
+  z-index:4;
+  justify-content:space-between;
+  gap:10px;
+  margin:0;
+  color:#87b2c9;
+  font:9px/1.5 var(--mono);
+  letter-spacing:.08em;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack {
+  order:2;
+  display:block;
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  max-width:none;
+  height:clamp(520px,49vw,660px);
+  min-height:0;
+  margin:0;
+  padding:0;
+  overflow:visible;
+  perspective:none;
+  background:transparent;
+  touch-action:pan-y;
+}
+.journey-cinematic .stack3d-canvas {
+  display:block;
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  background:transparent;
+  cursor:grab;
+  touch-action:pan-y;
+}
+.journey-cinematic .stack3d-canvas:active {cursor:grabbing}
+/* The label position is projected from the *same 3D matrix* as each slab;
+   unlike earlier versions, text is not part of a skewed button surface. */
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-selected,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:hover,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:focus-visible {
+  position:absolute!important;
+  inset:auto!important;
+  display:flex!important;
+  align-items:center;
+  gap:10px;
+  width:min(57%,340px);
+  height:auto!important;
+  min-height:32px!important;
+  max-height:none;
+  margin:0!important;
+  padding:5px 3px!important;
+  border:0!important;
+  background:none!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  filter:none!important;
+  transform:translate(-50%,-50%) scale(var(--stack3d-scale,1))!important;
+  transform-origin:center;
+  transition:color .2s,opacity .3s!important;
+  z-index:2;
+  opacity:var(--stack3d-alpha,1)!important;
+  visibility:visible;
+  text-align:left;
+  overflow:visible!important;
+  pointer-events:auto;
+  cursor:pointer;
+  white-space:normal;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:focus-visible {outline:2px solid #a2e7ff!important;outline-offset:7px}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-removed {
+  pointer-events:none!important;
+  visibility:hidden!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer::before,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer::after,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer .journey-stack-thickness,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer .journey-stack-glass-top,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer .journey-stack-layer-dot {display:none!important}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-count {
+  flex:0 0 auto;
+  font:600 clamp(16px,1.25vw,19px)/1 var(--display);
+  color:#9bdaf8;
+  text-shadow:0 1px 8px #001724;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-main {
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  overflow:visible;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-name {
+  display:block;
+  max-width:100%;
+  white-space:normal;
+  overflow:visible;
+  color:#e4f5ff;
+  font:650 clamp(13px,1.1vw,17px)/1.11 var(--display);
+  letter-spacing:-.034em;
+  text-shadow:0 2px 10px rgba(0,8,19,.75);
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-signal {
+  display:block;
+  color:#9fc7dc;
+  font:8px/1.2 var(--mono);
+  letter-spacing:.045em;
+  overflow:visible;
+  white-space:normal;
+  text-shadow:0 1px 6px #01121f;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:not(.is-selected) .journey-stack-layer-name {color:#c1d7e5}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-selected .journey-stack-layer-name {color:#fff}
+.journey-cinematic .journey-stack-toolbar {
+  order:3;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:7px 14px;
+  padding:12px 2px 5px;
+  margin:0;
+  z-index:5;
+  border:0;
+  border-top:1px solid rgba(122,191,229,.23);
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.journey-cinematic .journey-stack-toolbar-heading {
+  grid-column:1 / -1;
+  display:flex;
+  justify-content:space-between;
+  margin:0 0 2px;
+  color:#85b0ca;
+  font:9px/1.5 var(--mono);
+}
+.journey-cinematic .journey-stack-toolbar-heading strong {color:#bdeaff;font:500 12px var(--mono)}
+.journey-cinematic .journey-stack-toolbar-actions {display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.journey-cinematic .stack-control {
+  flex:0 1 auto;
+  min-height:36px;
+  padding:8px 12px;
+  background:rgba(11,31,47,.62);
+  border:1px solid rgba(112,178,218,.32);
+  border-radius:5px;
+  color:#d6edfa;
+  font:600 10px/1.3 var(--sans);
+  box-shadow:none;
+}
+.journey-cinematic .stack-control-primary {
+  background:#86ccef;
+  border-color:#86ccef;
+  color:#051a2b;
+  font-weight:700;
+}
+.journey-cinematic .stack-control:disabled {opacity:.35}
+.journey-cinematic .stack-mode {
+  grid-column:2;
+  justify-self:end;
+  margin:0;
+  padding:5px 0;
+  color:#a8cada;
+  font-size:10px;
+  white-space:nowrap;
+}
+.journey-cinematic .stack-mode-hint {display:none}
+.journey-cinematic .stack-mode-dot {width:6px;height:6px}
+.journey-cinematic .journey-stack-foot {
+  order:4;
+  margin:14px 0 0;
+  opacity:.62;
+  font-size:9px;
+}
+.journey-cinematic .journey-stack-readout {
+  padding:clamp(25px,2.6vw,43px);
+  background:linear-gradient(145deg,rgba(7,28,42,.73),rgba(3,15,25,.85));
+}
+.journey-cinematic .journey-stack-readout h4 {font-size:clamp(32px,2.85vw,46px);line-height:1.1}
+.journey-cinematic .journey-stack-longform p {font-size:13px;line-height:1.82}
+@media(max-width:1150px){
+ .journey-cinematic .journey-stack-layout {grid-template-columns:1fr}
+ .journey-cinematic .journey-stack-stage{border-bottom:1px solid rgba(117,176,211,.20);border-right:0}
+ .journey-cinematic .journey-stack-list.is-webgl-stack{max-width:820px;margin-inline:auto;height:570px}
+}
+@media(max-width:720px){
+ .journey-cinematic .journey-stack-stage{padding:18px 13px 16px}
+ .journey-cinematic .journey-stack-list.is-webgl-stack{height:430px;margin:0 auto}
+ .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer,
+ .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-selected {
+   width:63%;gap:6px;min-height:26px!important;
+ }
+ .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-count{font-size:13px}
+ .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-name{font-size:11px}
+ .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-signal{font-size:6.5px}
+ .journey-cinematic .journey-stack-toolbar {grid-template-columns:1fr;gap:8px}
+ .journey-cinematic .journey-stack-toolbar-actions{grid-column:1;display:flex;flex-wrap:nowrap}
+ .journey-cinematic .stack-control{flex:1;padding:8px 3px;min-width:0;font-size:9px}
+ .journey-cinematic .stack-mode{grid-column:1;justify-self:start;font-size:10px}
+ .journey-cinematic .journey-stack-foot{margin-top:8px}
+ .journey-cinematic .journey-stack-readout{padding:24px 19px}
+}
+@media(prefers-reduced-motion:reduce){
+ .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer {transition:none!important}
+}

@@ -1,0 +1,119 @@
+/* M6.37 — Natural cinematic typography + restrained active-layer illumination.
+   Preservation: no layer geometry, chapter prose, skills, or interactions changed. */
+
+/* Inline glyphs preserve normal font shaping and spacing. Previous inline-block
+   letters plus explicit word margins exaggerated tracking between every glyph. */
+.journey-m612 .journey-narrative h3 {
+  font-family: 'DM Sans', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(30px, 3.55vw, 52px) !important;
+  line-height: 1.105 !important;
+  letter-spacing: -.043em !important;
+  font-kerning: normal;
+  text-wrap: balance;
+  max-width: min(35ch, 94vw) !important;
+}
+.journey-m612 .cinema-copy-slide h3 {
+  line-height: 1.105 !important;
+  max-width: min(35ch, 94vw) !important;
+}
+.journey-m612 .cinema-title-word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0 !important;
+  letter-spacing: inherit;
+}
+.journey-m612 .cinema-title-letter {
+  display: inline;
+  position: relative;
+  letter-spacing: inherit;
+  font-kerning: normal;
+  transform: none !important;
+  will-change: opacity, top;
+}
+@media (max-width: 720px) {
+  .journey-m612 .journey-narrative h3 {
+    font-size: clamp(28px, 7vw, 40px) !important;
+    line-height: 1.13 !important;
+    max-width: 95vw !important;
+  }
+}
+@media (max-width: 430px) {
+  .journey-m612 .journey-narrative h3 {
+    font-size: clamp(27px, 8vw, 34px) !important;
+    line-height: 1.13 !important;
+  }
+}
+
+/* Stack nameplates: a short, selection-triggered activation, not constant
+   shimmering. Every element is still positioned by the actual 3D slab. */
+.journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-main {
+  position: relative;
+  min-width: 0;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-name {
+  color: #f6fdff !important;
+  text-shadow: 0 0 12px rgba(113,196,247,.26), 0 2px 8px rgba(0,8,22,.62) !important;
+  animation: m637-title-arrive .58s cubic-bezier(.2,.9,.3,1) both;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-count {
+  animation: m637-index-ignite .68s ease-out both;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-main::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: min(76%, 195px);
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(93,186,248,0), #9bdcff, #72c4f6, rgba(87,183,240,0));
+  transform-origin: left center;
+  box-shadow: 0 0 10px rgba(89,183,244,.34);
+  animation: m637-nameplate-trace .78s cubic-bezier(.18,.85,.3,1) .04s both;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current {
+  box-shadow: 0 13px 28px rgba(0,7,23,.49), 0 0 19px rgba(77,169,231,.16), inset 0 1px rgba(165,244,255,.13) !important;
+}
+@keyframes m637-title-arrive {
+  from { opacity: .50; translate: 0 5px; filter: brightness(.75); }
+  to { opacity: 1; translate: 0 0; filter: brightness(1); }
+}
+@keyframes m637-index-ignite {
+  from { opacity: .48; text-shadow: 0 0 0 transparent; }
+  45% { opacity: 1; text-shadow: 0 0 11px rgba(122,205,254,.67); }
+  to { opacity: 1; text-shadow: 0 0 3px rgba(122,205,254,.23); }
+}
+@keyframes m637-nameplate-trace {
+  from { opacity: 0; transform: scaleX(0); }
+  65% { opacity: 1; }
+  to { opacity: .90; transform: scaleX(1); }
+}
+@media (max-width: 720px) {
+  .journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-main::after { bottom: -4px; height: 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-name,
+  .journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-count,
+  .journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-main::after {
+    animation: none !important;
+    translate: none !important;
+  }
+  .journey-cinematic .journey-stack-list.is-webgl-stack .stack3d-current .journey-stack-layer-main::after { transform: none; opacity: .8; }
+  .journey-m612 .cinema-title-letter { top: 0 !important; }
+}
+
+/* Milestone 6.37 palette guard: use the site's established cyan-blue accents.
+   No new hue is introduced: the stack remains navy/sapphire/ice blue. */
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current {
+  background:linear-gradient(107deg,rgba(5,22,47,.97),rgba(9,38,74,.96) 67%,rgba(7,37,71,.92))!important;
+  border-color:rgba(112,194,243,.70)!important;
+  border-left:3px solid #72c4f6!important;
+  box-shadow:0 13px 28px rgba(0,7,23,.49),0 0 15px rgba(77,169,231,.15)!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current:hover {border-color:rgba(160,221,255,.92)!important;}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current .journey-stack-layer-count {color:#b9e5ff!important;}
+.journey-cinematic .journey-stack-toolbar-actions .stack-control-primary {
+  background:linear-gradient(110deg,#75c8f8,#88d3fa)!important;
+  border-color:#8cd5ff!important;
+}

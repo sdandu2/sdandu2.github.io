@@ -1,0 +1,21 @@
+/* M6.54 — Conversational contact heading + non-nested email copy action. */
+.contact-circuit-section h2{font-size:clamp(3.1rem,7.5vw,7.1rem);letter-spacing:-.065em;text-wrap:balance;}
+.qc-email-unit{position:absolute;z-index:3;top:12.5%;left:59.5%;right:4%;transform:translateY(-50%);}
+.qc-email-unit .qc-gate-email{position:relative;top:auto;left:auto;right:auto;width:100%;transform:none;padding-right:132px;}
+.qc-email-unit .qc-gate-email:hover{transform:translateX(3px);}
+.qc-email-unit .qc-gate-email .qc-gate-arrow{display:none;}
+.qc-email-copy{position:absolute;top:50%;right:12px;transform:translateY(-50%);z-index:5;min-width:108px;min-height:38px;padding:7px 10px;border:1px solid #4b91b9;border-radius:2px;background:#143751;color:#c9f0ff;font:700 12px var(--sans,'DM Sans',sans-serif);cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s;}
+.qc-email-copy:is(:hover,:focus-visible),.qc-email-copy.is-copied{background:#1b5073;border-color:#9ae1ff;box-shadow:0 0 14px rgba(68,165,223,.22);}
+.qc-email-copy:focus-visible{outline:2px solid #b6ecff;outline-offset:3px;}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
+@media(max-width:760px){.qc-email-unit .qc-gate-email{padding-right:118px}.qc-email-copy{min-width:100px;font-size:11px}}
+@media(max-width:620px){
+ .contact-circuit-section h2{font-size:clamp(2.45rem,9.3vw,4rem);letter-spacing:-.062em}
+ .qc-email-unit{position:relative;top:auto;left:auto;right:auto;transform:none;width:100%;}
+ .qc-email-unit .qc-gate-email{padding-right:12px;min-height:70px;}
+ .qc-email-unit .qc-gate-email:hover{transform:none;}
+ .qc-email-unit .qc-gate-email:before{content:"";position:absolute;left:-54px;top:50%;height:2px;width:54px;background:#5caedc;box-shadow:0 0 8px rgba(88,189,241,.19)}
+ .qc-email-copy{position:relative;top:auto;right:auto;transform:none;width:100%;margin-top:7px;min-height:38px;}
+}
+@media(max-width:390px){.qc-email-unit .qc-gate-email:before{left:-48px;width:48px}}
+@media(prefers-reduced-motion:reduce){.qc-email-copy{transition:none;}}

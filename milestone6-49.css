@@ -1,0 +1,9 @@
+/* M6.49 — no explanatory disclaimer, no skill-details reader or secondary
+   project-supported skill inventory. Keep imagery and copy in project reader. */
+#engine .skill-v49-gallery-intro {max-width:830px;}
+#engine .skill-v49-gallery-intro .network-focus-copy {margin-bottom:4px;}
+#engine .skill-v49-project-only {margin-bottom:0;}
+#engine .skill-v49-project-only .skill-v46-full-description {max-width:780px;}
+#engine .skill-v49-project-only .skill-v46-project-art {align-self:start;}
+#engine .skill-v49-project-only .skill-v46-notes {margin-top:20px;}
+@media(max-width:850px){#engine .skill-v49-project-only{gap:20px;}}

@@ -1,0 +1,90 @@
+/* M6.24 — Restore the original connected-graph visual, broaden the content and
+   keep all six categories in a consistent evidence-oriented interface. */
+#engine>.shell{width:min(1690px,calc(100% - 56px));max-width:none}
+#engine .section-title-row{margin-bottom:30px}
+#engine .section-caption{max-width:490px}
+#engine .skill-atlas-navigation{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:13px 18px;background:linear-gradient(105deg,#081e2e,#04111c)}
+#engine .skill-layer-tabs{width:auto;max-width:100%;display:flex;align-items:center;flex-wrap:wrap;gap:7px;overflow:visible}
+#engine .skill-layer-tabs button{border:1px solid #315471;color:#b4d4e9;border-radius:4px;background:#081b2b;font:600 12px/1.15 var(--display);padding:11px 17px;min-height:40px}
+#engine .skill-layer-tabs button[aria-pressed="true"]{background:linear-gradient(120deg,#1a5877,#103449);border-color:#71d3ff;color:white;box-shadow:0 0 0 1px #54b8ed22,inset 0 0 22px #5cceff12}
+#engine .skill-layer-tabs button:hover{background:#155076;border-color:#66bfe9}
+#engine .skill-atlas-search-wrap{flex:0 1 280px;min-width:155px;margin-left:auto}
+#engine .skill-atlas-search-wrap label{font:10px var(--mono);color:#92c5df}
+#engine .skill-atlas-search-wrap input{width:100%;min-width:120px;height:38px;background:#081f2f;border-color:#3d7897;color:#ebfaff;font:12px var(--display);padding:8px 11px}
+#engine .skill-atlas-navigation .skill-v2-view-controls{display:flex;gap:12px;align-items:center;width:100%;flex-wrap:wrap;color:#86acc2;font:10px var(--mono)}
+#engine .skill-v2-view-controls button{border:1px solid #3b6983;background:#0b2e43;color:#d5edfb;border-radius:3px;font:11px var(--mono);padding:8px 12px;cursor:pointer}
+#engine .skill-v2-view-controls button[aria-pressed="true"]{background:#1b607e;border-color:#8bdfff}
+#engine .skill-v2-view-controls span{white-space:nowrap}
+#engine .skill-v2-view-controls span:first-of-type{color:#9bdcff}
+#engine .skill-v2-view-controls span:last-of-type{color:#9eafc6}
+#engine .skill-atlas-module{display:grid;grid-template-columns:minmax(0,1fr) 290px!important;background:#051522;border:1px solid rgba(111,185,230,.28);min-height:0!important}
+#engine .skill-atlas-stage{min-height:0!important;background:radial-gradient(ellipse at 51% 45%,rgba(25,85,117,.22),transparent 66%),linear-gradient(170deg,#051523,#071c2e 58%,#04111d)}
+#engine .skill-rail-toolbar{height:43px;background:#061b2b;border-color:#285775;padding:0 15px}
+#engine .skill-atlas-eyebrow{font-size:10px;letter-spacing:.09em;color:#9cd5f4}
+#engine .skill-rail-toolbar strong{min-width:165px;font:10px var(--mono);color:#9dcbeb}
+#engine .skill-rail-toolbar button{height:30px;width:32px}
+#engine .skill-atlas-viewport{display:block;height:760px;max-height:760px;overflow:auto;overscroll-behavior:contain;scrollbar-color:#397fa4 #081c2d;scrollbar-width:thin;scroll-snap-type:none}
+#engine .skill-atlas-canvas{position:relative;min-height:0!important}
+#engine .skill-atlas-columns,#engine .skill-atlas-svg,#engine .skill-atlas-nodes{position:absolute;inset:0}
+#engine .skill-column{padding:19px 11px;background:linear-gradient(90deg,rgba(22,79,113,.23),rgba(6,34,53,.08));border-left:1px solid #558aab3c;border-right:1px solid #558aab25}
+#engine .skill-column>span{font:700 10px/1.45 var(--mono);letter-spacing:.05em;color:#87d1f8;max-width:175px;white-space:normal}
+#engine .skill-column>small{font:10px/1.4 var(--display);color:#7fa8c1;margin-top:7px}
+#engine .skill-atlas-svg{z-index:1;pointer-events:none;overflow:visible}
+#engine .skill-edge{stroke:#5fa5c9;stroke-width:1.25;stroke-opacity:.34;filter:none}
+#engine .skill-edge.is-related{stroke:#83d5ff;stroke-width:1.7;stroke-opacity:.90;filter:drop-shadow(0 0 3px #47bff58a)}
+#engine .skill-edge.is-muted{stroke-opacity:.037}
+#engine .skill-atlas-nodes{z-index:2}
+#engine .skill-v2-node{width:182px;min-height:59px;max-height:72px;grid-template-columns:22px 1fr;gap:3px 6px;padding:10px 9px;border:1px solid #4c86a8;border-left:3px solid #4ba9d3;border-radius:1px;background:linear-gradient(105deg,#0c2c43,#061a2a);box-shadow:0 5px 15px #00101a85;transition:opacity .22s,border-color .22s,box-shadow .22s,background .22s;overflow:hidden}
+#engine .skill-v2-node .skill-node-title{font:600 13px/1.25 var(--display);color:#e7f6ff;letter-spacing:-.02em;overflow-wrap:break-word}
+#engine .skill-v2-node .skill-node-index{font:600 9px var(--mono);color:#8acef2}
+#engine .skill-v2-node small{font:9px/1.1 var(--mono);color:#83b9d5;text-transform:uppercase}
+#engine .skill-v2-node.skill-v2-explore{border:1px dashed #4e7d9b;border-left:3px solid #617c93;background:linear-gradient(110deg,#11293a,#081927)}
+#engine .skill-v2-node.skill-v2-explore small{color:#b7b5c8}
+#engine .skill-v2-node.is-selected,#engine .skill-v2-node:hover,#engine .skill-v2-node:focus-visible{background:linear-gradient(112deg,#1a587c,#0b304a);border-color:#b0e9ff;box-shadow:0 0 18px #46c3fa55;opacity:1!important}
+#engine .skill-v2-node.is-related{border-color:#7bc7eb}
+#engine .skill-v2-node.is-muted{opacity:.21}
+#engine .network-stage-bottom{font-size:9px;letter-spacing:.06em;padding:13px 16px}
+#engine .skill-atlas-module .network-focus{background:linear-gradient(180deg,#082238,#041321);border-left:1px solid #2d5672;padding:25px 21px;min-height:0;overflow-wrap:anywhere}
+#engine .skill-atlas-module .network-focus .network-focus-top{font-size:9px}
+#engine .skill-atlas-module .network-focus-category{margin:26px 0 11px;color:#83c7ed}
+#engine .skill-atlas-module .network-focus h3{font-size:clamp(24px,2.1vw,35px);line-height:1.12;letter-spacing:-.04em}
+#engine .skill-atlas-module .network-focus-copy{font:13px/1.75 var(--display);color:#c0d9ed}
+#engine .skill-v2-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;border-block:1px solid #3b6987;padding:18px 0;margin:20px 0}
+#engine .skill-v2-stats div{display:flex;flex-direction:column;gap:4px}
+#engine .skill-v2-stats strong{font:600 30px/1.1 var(--display);color:#79d3ff}
+#engine .skill-v2-stats span{font:10px var(--mono);color:#a0c3d8}
+#engine .skill-proof-note{color:#9dbcd0;font:11px/1.7 var(--display)}
+#engine .skill-proof-note b{color:#d2ecff;font-weight:600}
+#engine .skill-v2-empty{color:#aabed0;font:12px/1.6 var(--display)}
+#engine .network-focus-links button{border:1px solid #3d718b;background:#0e3650;color:#d2ebfa}
+#engine .network-focus-links button:hover{border-color:#98dbfc;background:#1b5674}
+#engine .skill-explore-start{font-size:12px;width:100%}
+#engine .skill-atlas-mobile{display:none}
+@media(max-width:1390px){
+ #engine>.shell{width:calc(100% - 48px)}
+ #engine .skill-atlas-module{grid-template-columns:minmax(0,1fr) 264px!important}
+ #engine .skill-atlas-search-wrap{flex-basis:230px}
+}
+@media(max-width:1100px){
+ #engine .skill-atlas-module{grid-template-columns:minmax(0,1fr)!important}
+ #engine .skill-atlas-module .network-focus{border-left:0;border-top:1px solid #376078}
+ #engine .skill-atlas-viewport{height:690px;max-height:690px}
+ #engine .skill-atlas-navigation{align-items:flex-start}
+}
+@media(max-width:760px){
+ #engine>.shell{width:calc(100% - 28px)}
+ #engine .skill-atlas-viewport{display:none!important}
+ #engine .skill-atlas-mobile{display:grid;gap:0;padding:12px 16px 18px}
+ #engine .skill-mobile-group summary{font-size:12px;padding:15px 5px}
+ #engine .skill-mobile-group>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #engine .skill-mobile-group button{font-size:13px;line-height:1.4;min-height:46px}
+ #engine .skill-atlas-navigation .skill-atlas-search-wrap{flex:1 0 100%;margin-left:0}
+ #engine .skill-layer-tabs{width:100%}
+ #engine .skill-atlas-module .network-focus{padding:24px}
+}
+@media(max-width:420px){
+ #engine .skill-layer-tabs button{padding:9px 12px;font-size:11px}
+ #engine .skill-mobile-group>div{grid-template-columns:1fr}
+ #engine .skill-rail-toolbar strong{min-width:0;max-width:150px;overflow:hidden;text-overflow:ellipsis}
+}
+@media(prefers-reduced-motion:reduce){#engine .skill-edge{animation:none!important}#engine .skill-v2-node{transition:none!important}}

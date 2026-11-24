@@ -1,0 +1,124 @@
+M6.42: More legible graph connections and four featured, fully project-backed pathway spotlights. See MILESTONE6_42_VISIBLE_PATHWAYS.md.
+
+/* M6.42: Actually readable pathways, not barely distinguishable lens tints.
+   Navy/cyan palette unchanged. Every one of the 70 underlying edges stays in DOM. */
+#engine .skill-v42-pathway{
+  padding:19px 22px 17px;
+  border:1px solid #3b81a8;border-bottom:0;
+  background:linear-gradient(110deg,rgba(13,51,75,.97),rgba(7,30,48,.99) 60%,#071726);
+}
+#engine .skill-v42-pathway-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}
+#engine .skill-v42-pathway-heading>div:first-child{min-width:0}
+#engine .skill-v42-eyebrow{margin:0 0 8px;color:#92d7ff;font:800 10px/1.3 'DM Mono',ui-monospace,monospace;letter-spacing:.085em}
+#engine .skill-v42-proof-dot{display:inline-block;width:5px;height:5px;border-radius:50%;vertical-align:middle;margin:0 5px;background:#b4e9ff;box-shadow:0 0 8px #87d7fd}
+#engine .skill-v42-pathway h3{margin:0 0 5px;font:800 clamp(16px,1.2vw,21px)/1.2 'DM Sans',sans-serif;letter-spacing:-.025em;color:#f1faff}
+#engine .skill-v42-pathway-heading p:last-child{margin:0;color:#b5d3e5;font:400 12px/1.5 'DM Sans',sans-serif;max-width:830px}
+#engine .skill-v42-path-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+#engine .skill-v42-path-actions button{
+ border:1px solid #579cc0;border-radius:4px;cursor:pointer;min-height:38px;
+ color:#f1faff;background:#185477;padding:10px 13px;
+ font:750 12px/1.2 'DM Sans',sans-serif;
+}
+#engine .skill-v42-path-actions button:last-child{background:#0a293f;color:#b4d5e9}
+#engine .skill-v42-path-actions button:hover,#engine .skill-v42-path-actions button:focus-visible{
+ background:#267ca2;border-color:#b6ebff;outline-offset:2px;
+}
+#engine .skill-v42-path-chips{display:flex;align-items:center;gap:6px;margin-top:16px;overflow-x:auto;padding:1px 0 8px;scrollbar-color:#417fa1 #092238}
+#engine .skill-v42-path-chip{
+ display:inline-flex;align-items:center;gap:8px;flex:1 1 0;min-width:0;max-width:240px;
+ border:1px solid #549bc2;border-radius:5px;background:#0d334e;color:#e9f7ff;
+ min-height:42px;padding:8px 10px;text-align:left;cursor:pointer;
+ font:700 clamp(10px,.75vw,12px)/1.3 'DM Sans',sans-serif;
+ box-shadow:inset 0 1px 0 rgba(167,226,255,.1);
+}
+#engine .skill-v42-path-chip:hover,#engine .skill-v42-path-chip:focus-visible{
+ background:#195c7b;border-color:#b7ecff;outline:2px solid #b7ecff;outline-offset:2px;
+}
+#engine .skill-v42-path-index{flex-shrink:0;display:grid;place-items:center;width:21px;height:21px;background:#78d5ff;color:#07243a;border-radius:50%;font:800 11px 'DM Sans',sans-serif}
+#engine .skill-v42-path-arrow{flex:0 0 auto;color:#82c8ee;font:800 19px 'DM Sans',sans-serif}
+#engine .skill-v42-path-legend{display:flex;gap:14px 24px;flex-wrap:wrap;margin-top:9px;font:600 11px/1.4 'DM Sans',sans-serif;color:#a6cbe1}
+#engine .skill-v42-path-legend>span{display:inline-flex;align-items:center;gap:7px}
+#engine .skill-v42-path-legend i{width:23px;display:inline-block;height:0;border-top:3px solid #78bee9;border-radius:3px}
+#engine .skill-v42-path-legend .skill-v42-legend-dashed{border-color:#8da6c5;border-top-style:dashed;border-top-width:2px}
+#engine .skill-v42-path-legend .skill-v42-legend-focus{border-color:#d6f4ff;border-top-width:4px;box-shadow:0 0 6px #56c4ff}
+/* Dark underwire creates enough separation where 70 curves intersect. */
+#engine .skill-v3-module .skill-v42-wire-border{fill:none;stroke:#020d1b;stroke-width:5;stroke-opacity:.89;stroke-linecap:round}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context .skill-v42-wire-border{stroke-width:3.6;stroke-opacity:.76}
+#engine .skill-v3-module .skill-v3-connection .skill-v3-wire{
+ stroke:url(#skill-wire-gradient);stroke-opacity:.85;stroke-width:2.45;
+ filter:drop-shadow(0 0 2px rgba(98,184,237,.28));
+}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context .skill-v3-wire{
+ stroke:#779bbd;stroke-width:1.7;stroke-opacity:.65;stroke-dasharray:5 7;filter:none;
+}
+#engine .skill-v3-module .skill-v3-connection.is-lens-related .skill-v3-wire{
+ stroke:#91d7f9;stroke-width:2.7;stroke-opacity:.96;filter:drop-shadow(0 0 3px #398dc191);
+}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-lens-related .skill-v3-wire{
+ stroke:#7bafd1;stroke-width:1.85;stroke-opacity:.82;stroke-dasharray:5 7;filter:none;
+}
+#engine .skill-v3-module .skill-v3-connection.is-lens-dim .skill-v3-wire{stroke-opacity:.24;filter:none}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-lens-dim .skill-v3-wire{stroke-opacity:.18}
+#engine .skill-v3-module .skill-v3-connection.is-muted .skill-v3-wire{stroke-opacity:.19;filter:none}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-muted .skill-v3-wire{stroke-opacity:.14}
+#engine .skill-v3-module .skill-v3-connection.is-trail .skill-v3-wire{stroke-opacity:.86;stroke-width:2.75}
+/* A separate foreground layer means the route doesn't visually disappear under
+   other crossings. The node cards themselves stay in front for legible labels. */
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-back{
+ fill:none;stroke:#062039;stroke-width:9;stroke-linecap:round;stroke-opacity:.98;
+}
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-front{
+ fill:none;stroke:#adf0ff;stroke-width:4.2;stroke-linecap:round;stroke-opacity:1;
+ filter:drop-shadow(0 0 5px rgba(72,200,255,.85));
+}
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-pulse{
+ fill:none;stroke:#f6fdff;stroke-width:6;stroke-linecap:round;
+ stroke-dasharray:2 98;stroke-dashoffset:100;stroke-opacity:1;
+ filter:drop-shadow(0 0 8px rgba(145,231,255,.97));
+ animation:m639-signal-flow 3.1s linear var(--signal-delay,0s) infinite;
+}
+#engine .skill-v3-module.skill-v3-paused .skill-v42-focus-pulse{display:none}
+/* The six real steps are unmistakable in the grid, without changing the rest
+   of the node hierarchy or increasing the number of connections. */
+#engine .skill-v3-module .skill-v3-node.is-trail{
+ opacity:1!important;z-index:5;
+ border-color:#9addff;
+ background:linear-gradient(107deg,#175677,#0b304d);
+ box-shadow:inset 3px 0 0 #a2e8ff,0 0 0 1px rgba(121,213,255,.23),0 0 14px rgba(66,188,252,.38);
+}
+#engine .skill-v3-module .skill-v3-node.is-trail .skill-v3-beacon{
+ background:#e5faff;box-shadow:0 0 8px #b5efff,0 0 15px #5dc7ff;
+}
+#engine .skill-v3-module .skill-v3-node.is-trail-start{border-color:#d0f6ff;box-shadow:inset 3px 0 0 #d2f8ff,0 0 0 2px #6dc4eb,0 0 19px #4bb1ed9c}
+#engine .skill-v3-module .skill-v3-node.is-trail .skill-v3-label{color:#fff}
+#engine .skill-v3-module .skill-v3-node.is-trail.is-muted{opacity:.26!important}
+#engine .skill-v3-module .skill-v3-node.is-related{opacity:1!important}
+#engine .skill-v3-module .skill-v3-node .skill-v3-label{font-size:clamp(12px,.78vw,13px)}
+#engine .skill-v3-module .skill-v3-node small{font-size:9.5px;line-height:1.12}
+#engine .skill-v3-module .skill-v3-connection.is-trail .skill-v3-signal{stroke-opacity:0}
+@media(max-width:1390px){
+ #engine .skill-v42-pathway-heading{align-items:flex-start}
+ #engine .skill-v42-path-chip{flex:0 0 auto;min-width:128px;max-width:210px}
+}
+@media(max-width:760px){
+ #engine .skill-v42-pathway{padding:15px 13px}
+ #engine .skill-v42-pathway-heading{flex-direction:column;align-items:stretch}
+ #engine .skill-v42-path-actions{justify-content:flex-start}
+ #engine .skill-v42-path-chip{min-width:150px}
+ #engine .skill-v42-pathway .skill-v42-pathway-heading p:last-child{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ #engine .skill-v3-module .skill-v42-focus-pulse{display:none!important;animation:none!important}
+ #engine .skill-v3-module .skill-v42-focus-front{filter:none}
+}
+
+/* Long technical titles need real vertical room instead of clipping on laptops. */
+#engine .skill-v3-module .skill-v3-node{height:68px!important;min-height:68px!important;max-height:68px!important;padding:8px 8px 8px 9px;}
+#engine .skill-v3-module .skill-v3-node .skill-v3-label{max-height:47px;line-height:1.1}
+
+/* On phones the six-step example is horizontally browsable, not crammed. */
+@media(max-width:760px){
+ #engine .skill-v42-path-chips{scroll-snap-type:x proximity}
+ #engine .skill-v42-path-chip{scroll-snap-align:start}
+ #engine .skill-v42-pathway-heading p:last-child::after{content:' Swipe the steps to see the full route.';color:#8fdbff}
+}

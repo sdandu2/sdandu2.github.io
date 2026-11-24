@@ -1,0 +1,141 @@
+/* M6.34 — One-tap Space pause + legible slideshow navigation.
+   Playback styling is scoped to the Journey; stack palette changes are
+   applied separately at the end of this stylesheet. The Skills Atlas remains unchanged. */
+.journey-m612 .journey-playback {
+  padding:12px max(22px,3.6vw) 15px!important;
+  border-top:1px solid rgba(115,204,248,.38);
+  box-shadow:0 -10px 28px rgba(1,10,19,.22);
+}
+.journey-m612 .journey-playback-head {
+  display:flex!important;justify-content:space-between;align-items:center;
+  margin:0 0 9px;gap:12px;letter-spacing:.035em;
+  font:600 11px/1.35 var(--sans);color:#b4dff6;
+}
+.journey-m612 .journey-playback-head span:last-child {display:inline!important;color:#83badb}
+.journey-m612 .journey-playback-track {height:4px;margin-bottom:8px;background:#1a3e56;border-radius:3px}
+.journey-m612 .journey-chapter-scrubber {gap:6px;margin:0 0 10px}
+.journey-m612 .journey-chapter-scrubber button {
+  display:flex;align-items:center;justify-content:flex-start;gap:6px;
+  min-height:40px;padding:7px 9px;border:1px solid #375b75!important;
+  border-radius:6px;background:rgba(9,34,53,.75)!important;
+  font:600 11px/1.25 var(--sans);letter-spacing:.005em;color:#b2cee3;
+  transition:border-color .18s,background .18s,color .18s,box-shadow .18s;
+}
+.journey-m612 .journey-chapter-scrubber button>span {font-weight:800;color:#83c7f0}
+.journey-m612 .journey-chapter-scrubber button strong {
+  font-weight:650;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.journey-m612 .journey-chapter-scrubber button.is-current {
+  background:rgba(29,95,134,.64)!important;
+  border:1px solid #9de4ff!important;
+  box-shadow:0 0 0 1px rgba(98,206,250,.2),inset 0 0 14px rgba(97,186,242,.2)!important;
+  color:white!important;
+}
+.journey-m612 .journey-chapter-scrubber button:hover {background:#14405b!important;border-color:#80cfff!important}
+.journey-m612 .journey-chapter-scrubber button:focus-visible,
+.journey-m612 .journey-playback-buttons button:focus-visible {
+  outline:3px solid #b6ecff;outline-offset:3px;
+}
+.journey-m612 .journey-playback-buttons {display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.journey-m612 .journey-playback-buttons button {
+  min-height:42px;padding:11px 14px;font:700 12px/1.25 var(--sans);
+  border-radius:6px;letter-spacing:.01em;
+}
+.journey-m612 #journey-play {
+  min-width:145px;color:#031927;background:#7bd2fb;border:1px solid #a9e9ff;
+  box-shadow:0 0 0 1px #74d2fb27,0 6px 20px #1d81c02a;
+}
+.journey-m612 #journey-play[aria-pressed="true"] {
+  background:#b7e9ff;border-color:#e0f7ff;color:#052137;
+}
+.journey-m612 #journey-previous,
+.journey-m612 #journey-next {border:1px solid #375c77;color:#c6eaff;background:rgba(18,53,78,.72)}
+.journey-m612 #journey-previous:disabled {opacity:.5;cursor:not-allowed}
+.journey-m612 .journey-playback-live-status {
+  display:inline-flex;align-items:center;gap:8px;min-height:35px;
+  padding:3px 10px;color:#c8e6f5;font:650 11px/1.3 var(--sans);
+  border-radius:6px;background:#0b2538;border:1px solid #335e7a;
+  white-space:nowrap;
+}
+.journey-m612 .journey-state-light {
+  display:inline-block;flex:0 0 7px;width:7px;height:7px;border-radius:100%;
+  background:#83aabc;box-shadow:0 0 7px #66c4ef44;
+}
+.journey-m612 [data-state="playing"] .journey-state-light {background:#7be6ff;box-shadow:0 0 12px #70d8ffbb}
+.journey-m612 [data-state="paused"] .journey-state-light {background:#f7c77d;box-shadow:0 0 9px #f7c77d55}
+.journey-m612 .cinema-keyboard-hint {
+  display:inline-flex;gap:5px;align-items:center;opacity:1;flex-wrap:wrap;
+  margin:0;padding:4px 5px 4px 8px;font:600 11px/1.4 var(--sans);color:#cce9f8;
+  white-space:normal;
+}
+.journey-m612 .cinema-keyboard-hint kbd {
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:34px;min-height:31px;padding:4px 8px;
+  border-radius:6px;border:1px solid #77badc;background:#163b57;
+  color:#f0fbff;box-shadow:inset 0 1px #b0e7fa22;
+  font:800 14px/1 var(--sans);
+}
+.journey-m612 .cinema-keyboard-hint .journey-space-key {font-size:11px;min-width:54px}
+.journey-m612 .journey-hint-label {margin:0 4px 0 7px}
+.journey-m612 .journey-navigation-shortcuts {gap:8px;margin-left:auto}
+.journey-m612 .journey-navigation-shortcuts button {border:1px solid #416f8d!important}
+@media (max-width:1200px){
+  .journey-m612 .journey-playback-buttons {gap:8px}
+  .journey-m612 .journey-navigation-shortcuts {margin-left:0}
+  .journey-m612 .journey-playback-buttons button {font-size:11.5px}
+}
+@media (max-width:720px){
+  .journey-m612 .journey-playback {padding:12px 14px 14px!important}
+  .journey-m612 .journey-playback-head {font-size:10.5px}
+  .journey-m612 .journey-playback-head span:last-child {display:none!important}
+  .journey-m612 .journey-chapter-scrubber {display:grid;gap:5px;padding:0 0 7px}
+  .journey-m612 .journey-chapter-scrubber button {
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:2px;min-height:44px;padding:5px 3px;
+  }
+  .journey-m612 .journey-chapter-scrubber button strong {font-size:10px}
+  .journey-m612 .journey-playback-live-status {order:0;flex:1;min-width:150px}
+  .journey-m612 #journey-play {order:0}
+  .journey-m612 #journey-previous,.journey-m612 #journey-next {order:1;flex:1}
+  .journey-m612 .cinema-keyboard-hint {order:2;width:100%;justify-content:center;padding:7px 0}
+  .journey-m612 .journey-navigation-shortcuts {order:3;width:100%;justify-content:stretch}
+  .journey-m612 .journey-navigation-shortcuts button {flex:1;min-height:42px}
+}
+@media (max-width:410px){
+  .journey-m612 .journey-chapter-scrubber {grid-template-columns:repeat(7,minmax(45px,1fr))}
+  .journey-m612 #journey-play {flex:1}
+  .journey-m612 .journey-playback-live-status {flex:1}
+  .journey-m612 .journey-playback-buttons button {padding:10px 10px}
+}
+@media (prefers-reduced-motion: reduce){
+  .journey-m612 .journey-chapter-scrubber button {transition:none}
+}
+
+/* M6.34 — Career Stack palette enhancement (no images and no geometry changes).
+   Sapphire + aurora teal provide depth without recoloring the website. */
+.journey-cinematic .journey-stack-stage {
+  background:radial-gradient(ellipse 70% 44% at 52% 44%,rgba(23,91,155,.17),transparent 84%),
+             radial-gradient(ellipse 72% 61% at 42% 79%,rgba(41,68,144,.13),transparent 80%),
+             #030d1d!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current {
+  background:linear-gradient(107deg,rgba(5,22,47,.97),rgba(9,38,74,.96) 67%,rgba(5,48,65,.90))!important;
+  border-color:rgba(96,222,214,.74)!important;
+  border-left:3px solid #53e5d5!important;
+  box-shadow:0 13px 28px rgba(0,7,23,.49),0 0 19px rgba(68,212,201,.19)!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current:hover {
+  border-color:rgba(128,255,238,.95)!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-count {color:#9ab5e9!important}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current .journey-stack-layer-count {color:#8dffea!important}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-signal {color:#a6c7e8!important}
+.journey-cinematic .journey-stack-foot {border-color:rgba(98,157,197,.28);color:#9ebcdb}
+.journey-cinematic .journey-stack-toolbar {border-color:rgba(90,155,197,.32)}
+.journey-cinematic .journey-stack-toolbar-actions .stack-control-primary {
+  border-color:#65e4da!important;background:linear-gradient(110deg,#67e7dd,#7bc9fa)!important;
+  color:#061c33!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer {transition:none!important}
+}

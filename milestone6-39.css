@@ -1,0 +1,82 @@
+/* M6.39 — Network-readable wires + animated electrical signals.
+   The 58 curated topics / 70 true relationships remain unchanged.
+   Motion is an ambient affordance, not a claim of data flowing in real time. */
+#engine .skill-v3-module .skill-column {
+  background:linear-gradient(90deg,rgba(10,40,64,.34),rgba(5,24,42,.12) 94%);
+  border-color:rgba(43,98,132,.53);
+}
+#engine .skill-v3-module .skill-v3-wire {
+  stroke:url(#skill-wire-gradient);
+  stroke-width:1.85;
+  stroke-opacity:.71;
+  filter:drop-shadow(0 0 2.1px rgba(83,180,235,.35));
+  transition:stroke-opacity .24s ease,stroke-width .24s ease,filter .24s ease;
+}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context .skill-v3-wire {
+  stroke:#6598c1;
+  stroke-width:1.45;
+  stroke-opacity:.42;
+  stroke-dasharray:3 6;
+  filter:none;
+}
+#engine .skill-v3-module .skill-v3-connection.is-muted .skill-v3-wire {
+  stroke-opacity:.24;
+  stroke-width:1.35;
+  filter:none;
+}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-muted .skill-v3-wire {
+  stroke-opacity:.18;
+}
+#engine .skill-v3-module .skill-v3-connection.is-related .skill-v3-wire {
+  stroke:#9ce5ff;
+  stroke-width:2.9;
+  stroke-opacity:1;
+  filter:drop-shadow(0 0 5px rgba(108,210,255,.85));
+}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-related .skill-v3-wire {
+  stroke:#89c8ee;
+  stroke-width:2.15;
+  stroke-opacity:.88;
+  filter:drop-shadow(0 0 2px rgba(102,185,238,.45));
+}
+/* Separate path: solid lines persist beneath small traveling energy packets. */
+#engine .skill-v3-module .skill-v3-signal {
+  fill:none;
+  pointer-events:none;
+  stroke:#c7f3ff;
+  stroke-width:3.3;
+  stroke-linecap:round;
+  stroke-dasharray:2.3 97.7;
+  stroke-dashoffset:100;
+  stroke-opacity:0;
+  filter:drop-shadow(0 0 4px rgba(112,221,255,.95));
+  animation:m639-signal-flow var(--signal-duration,8s) linear var(--signal-delay,0s) infinite;
+  transition:stroke-opacity .25s ease;
+}
+#engine .skill-v3-module .skill-v3-connection.is-ambient .skill-v3-signal {
+  stroke-opacity:.82;
+}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context.is-ambient .skill-v3-signal {
+  stroke-opacity:.43;
+  stroke-width:2.5;
+}
+#engine .skill-v3-module .skill-v3-connection.is-related .skill-v3-signal {
+  stroke-opacity:1;
+  stroke-width:4.3;
+  animation-duration:3.5s;
+  filter:drop-shadow(0 0 7px rgba(151,229,255,.9));
+}
+#engine .skill-v3-module .skill-v3-connection.is-muted .skill-v3-signal {stroke-opacity:0}
+#engine .skill-v3-module.skill-v3-paused .skill-v3-signal {stroke-opacity:0!important;animation-play-state:paused}
+#engine .skill-v3-module .skill-v3-node.is-related .skill-v3-beacon {
+  box-shadow:0 0 9px rgba(119,221,255,.85),0 0 15px rgba(107,199,244,.5);
+}
+#engine .skill-v3-module .skill-v3-node.is-selected .skill-v3-beacon {
+  background:#d2f8ff;
+  box-shadow:0 0 11px #a9efff,0 0 21px rgba(85,196,243,.74);
+}
+@keyframes m639-signal-flow {to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce) {
+ #engine .skill-v3-module .skill-v3-signal {display:none!important;animation:none!important}
+ #engine .skill-v3-module .skill-v3-wire {transition:none!important}
+}

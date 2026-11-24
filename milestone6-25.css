@@ -1,0 +1,76 @@
+/* Milestone 6.25 — six fixed columns, four hiring tracks, deliberate selection states.
+ * Visual continuity with the original project-knowledge network. */
+#engine>.shell{width:min(1720px,calc(100% - 56px));max-width:none}
+#engine .section-caption{max-width:520px}
+#engine .skill-atlas-navigation{align-items:center;justify-content:space-between;gap:10px 20px;padding:15px 18px}
+#engine .skill-layer-tabs{gap:8px}
+#engine .skill-layer-tabs button{min-width:74px;border-radius:5px;padding:10px 16px;white-space:nowrap}
+#engine .skill-layer-tabs button:focus-visible,#engine #skill-library-toggle:focus-visible,#engine .skill-clear-selection:focus-visible{outline:2px solid #afeaff;outline-offset:2px}
+#engine .skill-atlas-search-wrap{flex:0 1 258px}
+#engine .skill-atlas-navigation .skill-v2-view-controls{width:auto;gap:13px;flex-basis:100%;margin-top:2px}
+#engine .skill-v2-view-controls span{display:inline-flex;align-items:center;gap:6px}
+#engine .skill-key-solid,#engine .skill-key-outline{width:9px;height:9px;display:inline-block;flex-shrink:0;background:#4cb4e5;border:1px solid #8dd9ff;border-radius:2px}
+#engine .skill-key-outline{background:transparent;border-style:dashed;border-color:#9db1c9}
+#engine .skill-atlas-module{grid-template-columns:minmax(0,1fr) 292px!important;align-items:stretch}
+#engine .skill-rail-toolbar{display:none!important}
+#engine .skill-atlas-viewport{height:765px!important;max-height:none!important;overflow:hidden!important;scrollbar-width:none!important;scroll-snap-type:none!important}
+#engine .skill-atlas-canvas{width:100%;height:765px!important;min-height:765px!important}
+#engine .skill-column{box-sizing:border-box;top:0;bottom:auto;padding:16px 10px 10px;background:linear-gradient(110deg,rgba(24,79,111,.26),rgba(5,37,59,.04) 98%);border-right:1px solid #39779b33;border-left:1px solid #39779b3a}
+#engine .skill-column>span{font:700 10px/1.35 var(--mono);color:#96ddff;letter-spacing:.035em;max-width:100%;white-space:normal}
+#engine .skill-column>small{font-size:10px;color:#7faac6}
+#engine .skill-edge{stroke:#529ec4;stroke-opacity:.38;stroke-width:1.35}
+#engine .skill-edge.is-related{stroke:#90e2ff;stroke-opacity:.98;stroke-width:1.8;filter:drop-shadow(0 0 4px rgba(85,197,255,.75))}
+#engine .skill-edge.is-muted{stroke-opacity:.09}
+#engine .skill-v2-node{box-sizing:border-box;min-height:60px;height:60px;max-height:64px;grid-template-columns:20px minmax(0,1fr);gap:3px 5px;padding:9px 7px;overflow:hidden;background:linear-gradient(100deg,#0b2c44,#061c2e);box-shadow:0 5px 17px #000b1680;border-color:#4b84a5}
+#engine .skill-v2-node .skill-node-title{font:600 clamp(10px,.85vw,13px)/1.18 var(--display);letter-spacing:-.025em;hyphens:auto;overflow-wrap:anywhere}
+#engine .skill-v2-node small{font-size:8px;letter-spacing:0;line-height:1.2;color:#82b3cf}
+#engine .skill-v2-node.skill-v2-foundation{border-left-color:#699fc2}
+#engine .skill-v2-node.skill-v2-explore{border-left:3px dashed #9a9db6;border-color:#62809a;background:#071c2b}
+#engine .skill-v2-node.is-muted{opacity:.26}
+#engine .skill-v2-node.is-selected{z-index:10;border-color:#b0e9ff;background:linear-gradient(110deg,#185777,#0d314a)}
+#engine .skill-atlas-module .network-focus{padding:24px 20px;min-width:0}
+#engine .skill-atlas-module .network-focus .network-focus-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#engine .skill-clear-selection{cursor:pointer;flex-shrink:0;border:1px solid #4d829f;background:#0c2e44;color:#c8eeff;padding:6px 9px;border-radius:3px;font:600 10px var(--mono)}
+#engine .skill-clear-selection:hover{background:#1d546e;border-color:#9be3ff}
+#engine .skill-library-link{display:block;margin-top:14px;color:#b8eaff;font:500 11px var(--mono);background:transparent;border:0;border-bottom:1px solid #4389ac;padding:8px 0;cursor:pointer;text-align:left}
+#engine .skill-library-index{max-height:540px;overflow:auto;margin-top:16px;padding-right:6px;scrollbar-width:thin;scrollbar-color:#356d8b #0a2433}
+#engine .skill-library-index details{border-bottom:1px solid #2e536a;padding:8px 0}
+#engine .skill-library-index summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:6px;color:#c9eaff;font:600 12px var(--display)}
+#engine .skill-library-index summary span{font:11px var(--mono);color:#8dbbda}
+#engine .skill-library-index details>div{display:grid;gap:5px;padding:10px 0}
+#engine .skill-library-index button{display:grid;text-align:left;gap:3px;border:1px solid #315b72;background:#0a293e;color:#e1f1fc;padding:9px;cursor:pointer;font:600 12px var(--display)}
+#engine .skill-library-index button:hover,#engine .skill-library-index button:focus-visible{border-color:#83d5ff;background:#164660}
+#engine .skill-library-index button small{font:10px var(--mono);color:#91bbd3}
+#engine .skill-v2-stats strong{font-size:27px}
+#engine .network-stage-bottom{padding:11px 12px;font-size:9px}
+#engine .skill-atlas-viewport:focus-visible{outline:2px solid #9fdcff;outline-offset:-3px}
+@media(max-width:1350px){
+ #engine .skill-atlas-module{grid-template-columns:minmax(0,1fr)!important}
+ #engine .skill-atlas-module .network-focus{border-left:0;border-top:1px solid #2e6080}
+ #engine .skill-v2-node .skill-node-title{font-size:12px}
+}
+@media(max-width:970px){
+ #engine .skill-atlas-viewport{display:none!important}
+ #engine .skill-atlas-mobile{display:grid!important;gap:0;padding:13px 18px 20px}
+ #engine .skill-atlas-module .network-focus{padding:24px}
+ #engine .skill-atlas-search-wrap{flex:1 0 100%}
+ #engine .skill-layer-tabs{flex-wrap:wrap;gap:7px}
+ #engine .skill-layer-tabs button{min-width:auto}
+}
+@media(max-width:540px){
+ #engine>.shell{width:calc(100% - 26px)}
+ #engine .skill-atlas-navigation{padding:13px}
+ #engine .skill-layer-tabs button{padding:10px 12px;min-height:38px;font-size:11px}
+ #engine .skill-atlas-navigation .skill-v2-view-controls{gap:7px 11px}
+ #engine .skill-mobile-group>div{grid-template-columns:1fr 1fr}
+ #engine .skill-atlas-module .network-focus{padding:20px}
+}
+@media(max-width:390px){#engine .skill-mobile-group>div{grid-template-columns:1fr}}
+
+/* Optional software recruiter views, kept beneath the four primary career tracks. */
+#engine .skill-software-subfilters{display:flex;flex-wrap:wrap;align-items:center;gap:7px;width:100%;padding:3px 0 2px}
+#engine .skill-software-subfilters[hidden]{display:none!important}
+#engine .skill-software-subfilters>span{font:10px var(--mono);letter-spacing:.055em;color:#87afcb;margin-right:7px}
+#engine .skill-software-subfilters button{cursor:pointer;border:1px solid #325775;border-radius:3px;background:#081f30;color:#acd4e9;font:600 11px var(--display);padding:7px 12px}
+#engine .skill-software-subfilters button[aria-pressed="true"]{background:#164967;border-color:#78c8f0;color:white}
+#engine .skill-software-subfilters button:focus-visible{outline:2px solid #abecff;outline-offset:2px}

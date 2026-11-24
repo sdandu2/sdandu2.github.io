@@ -1,0 +1,131 @@
+/* M6.20: Crisp, screen-space layer labels. No changes to 3D slab geometry.
+ * The original <button> is still the accessible focus/click target, but it
+ * follows a projected world-space anchor instead of tilting with the slab.
+ */
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-selected,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:hover,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:focus-visible {
+  position:absolute!important;
+  inset:auto!important;
+  left:var(--stack-label-x,28%)!important;
+  top:var(--stack-label-y,40%)!important;
+  display:flex!important;
+  box-sizing:border-box!important;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:6px 8px!important;
+  transform:translateY(-50%)!important;
+  transform-origin:center!important;
+  border:1px solid transparent!important;
+  border-radius:5px!important;
+  background:rgba(2,18,31,.66)!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  filter:none!important;
+  overflow:visible!important;
+  text-align:left!important;
+  white-space:normal!important;
+  z-index:4!important;
+  opacity:calc(var(--stack3d-alpha,1) * .72)!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  cursor:pointer!important;
+  transition:opacity .18s ease,background-color .18s ease,border-color .18s ease!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current.is-selected {
+  width:var(--stack-nameplate-width,270px)!important;
+  max-width:calc(100% - 15px)!important;
+  padding:11px 13px!important;
+  gap:11px!important;
+  background:linear-gradient(105deg,rgba(2,18,32,.93) 0%,rgba(5,29,46,.92) 83%,rgba(5,29,46,.78) 100%)!important;
+  border:1px solid rgba(130,216,255,.52)!important;
+  border-left:2px solid #83d8ff!important;
+  box-shadow:0 10px 26px rgba(0,7,15,.42),0 0 16px rgba(84,196,243,.12)!important;
+  opacity:var(--stack3d-alpha,1)!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-removed,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-removed.stack3d-current {
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:hover:not(.is-removed){
+  border-color:rgba(153,227,255,.68)!important;
+  background:rgba(7,38,58,.92)!important;
+  opacity:1!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:focus-visible {
+  outline:2px solid #c8efff!important;
+  outline-offset:4px!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-count{
+  flex:none!important;
+  font:700 12px/1.25 var(--mono)!important;
+  color:#9ddcf7!important;
+  text-shadow:none!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current .journey-stack-layer-count{
+  color:#a4e2ff!important;
+  align-self:flex-start!important;
+  margin-top:2px!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-main{
+  min-width:0!important;
+  flex:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:5px!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer:not(.stack3d-current) .journey-stack-layer-main{
+  display:none!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-name,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-selected .journey-stack-layer-name{
+  display:block!important;
+  color:#f5fbff!important;
+  font:700 clamp(15px,1.45vw,20px)/1.12 var(--display)!important;
+  letter-spacing:-.025em!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+  text-shadow:0 1px 7px rgba(0,0,0,.25)!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-signal{
+  color:#a6d2e8!important;
+  font:600 9px/1.4 var(--mono)!important;
+  letter-spacing:.045em!important;
+  overflow-wrap:anywhere!important;
+  text-shadow:none!important;
+}
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer::before,
+.journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer::after{display:none!important}
+@media(max-width:720px){
+  .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.stack3d-current {
+    padding:8px 9px!important;gap:7px!important;
+  }
+  .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-name,
+  .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer.is-selected .journey-stack-layer-name{font-size:clamp(12px,3.4vw,15px)!important}
+  .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-signal{font-size:7.5px!important}
+  .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer-count{font-size:10px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .journey-cinematic .journey-stack-list.is-webgl-stack .journey-stack-layer{transition:none!important}
+}
+/* M6.19's later desktop grid rule unintentionally overrode the earlier mobile
+   breakpoint. On smaller screens, give the 3D stage and chapter their full width. */
+@media(max-width:1150px){
+  .journey-cinematic .journey-stack-layout{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  .journey-cinematic .journey-stack-stage{min-width:0!important;}
+  .journey-cinematic .journey-stack-readout{min-width:0!important;}
+}

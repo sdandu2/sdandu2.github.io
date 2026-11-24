@@ -1,0 +1,251 @@
+/* Milestone 6.16 — floating-glass 3D experience stack, readable flat typography.
+   The volume is built from distinct surfaces. No text is rotated or skewed. */
+
+/* Images in the Career Journey are uncaptioned; chapter text lives separately. */
+.journey-m612 .cinema-editorial-primary figcaption,
+.journey-m612 .cinema-editorial-caption,
+.journey-m612 .cinema-proj-shot figcaption { display: none !important; }
+
+/* With the redundant featured-project cards removed, preserve clean section rhythm. */
+.introduction .hero-actions { margin-bottom: 26px; }
+.introduction .hero-actions .button-primary { min-width: 155px; }
+.journey-section { scroll-margin-top: 78px; }
+#engine { scroll-margin-top: 80px; }
+
+/* The backdrop anchors the floating stack without becoming another diagram. */
+.journey-cinematic .journey-stack-stage {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 56% 34% at 51% 67%,rgba(48,148,211,.15),transparent 85%),
+    radial-gradient(ellipse 70% 55% at 58% 27%,rgba(18,62,92,.28),transparent 85%),
+    linear-gradient(160deg,#071724 0%,#04101c 95%);
+}
+.journey-cinematic .journey-stack-stage::before {
+  content: '';
+  position: absolute;
+  inset: 20% 12% 5%;
+  z-index: 0;
+  opacity:.7;
+  pointer-events:none;
+  transform: none;
+  border: 0;
+  background:
+    radial-gradient(ellipse 65% 35% at 54% 65%,rgba(42,173,233,.18),transparent 100%),
+    linear-gradient(90deg,transparent 20%,rgba(72,164,214,.07) 50%,transparent 80%);
+}
+.journey-cinematic .journey-stack-stage::after {
+  content: '';
+  z-index: 0;
+  position:absolute;
+  inset: 29% 14% 13%;
+  border:1px solid rgba(112,189,230,.08);
+  border-radius:50%;
+  transform:scaleY(.68);
+  pointer-events:none;
+}
+.journey-cinematic .journey-stack-legend,
+.journey-stack-toolbar,
+.journey-cinematic .journey-stack-foot { position:relative; z-index:5; }
+
+/* A 3D platform model: top facets, vertical front edges, physical thickness. */
+.journey-cinematic .journey-stack-list {
+  height: 638px;
+  max-width: 780px;
+  margin: 20px auto 13px;
+  perspective: none;
+  isolation: isolate;
+  overflow: visible;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer {
+  --depth-step: 77px;
+  --side-depth: 17px;
+  left: 21px;
+  right: 77px;
+  top: 45px;
+  height: 80px;
+  min-height:80px;
+  border:1px solid rgba(109,185,228,.53);
+  border-top-color:rgba(177,224,248,.78);
+  border-bottom-color:rgba(58,116,149,.62);
+  border-radius:5px 6px 3px 4px;
+  background:
+    linear-gradient(91deg,rgba(105,194,239,.12),transparent 26%),
+    linear-gradient(135deg,#163b58 5%,#0c304b 54%,#092137 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(236,251,255,.2),
+    inset 0 -1px 0 rgba(6,20,34,.8),
+    0 7px 10px rgba(1,6,13,.3),
+    0 23px 30px rgba(0,4,12,.31);
+  transform:translate3d(calc(var(--stack-depth) * 12px),calc(var(--stack-depth) * var(--depth-step)),0);
+  transform-style:flat;
+  overflow: visible;
+  z-index:calc(35 - var(--layer));
+  gap:15px;
+  padding-left:19px;
+  padding-right:19px;
+  cursor:pointer;
+  transition:
+    transform .56s cubic-bezier(.2,.82,.16,1),
+    opacity .37s ease,
+    visibility .37s ease,
+    filter .37s ease,
+    background .25s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+/* Angled top face: separate from the upright and crisp type. */
+.journey-cinematic .journey-stack-list .journey-stack-layer::before {
+  content:'';
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  inset:-24px -12px auto 0;
+  width:auto;
+  height:25px;
+  clip-path:polygon(25px 0,100% 0,calc(100% - 14px) 100%,0 100%);
+  background:
+    linear-gradient(110deg,rgba(124,213,255,.3),transparent 52%),
+    linear-gradient(180deg,#14405e 0%,#153b56 55%,#1d5274 100%);
+  border:none;
+  border-radius:0;
+  opacity:.96;
+}
+/* Right side face gives each plate volume instead of rotating its lettering. */
+.journey-cinematic .journey-stack-list .journey-stack-layer::after {
+  content:'';
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  top:0;
+  right:calc(-1 * var(--side-depth));
+  width:var(--side-depth);
+  height:calc(100% + 14px);
+  clip-path:polygon(0 0,100% -0%,100% calc(100% - 14px),0 100%);
+  background:linear-gradient(106deg,#145577 0%,#0b3049 51%,#061c2d 100%);
+  border-radius:0 4px 5px 0;
+  opacity:1;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-thickness {
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  left:0;
+  right:0;
+  bottom:-15px;
+  height:15px;
+  clip-path:polygon(0 0,100% 0,calc(100% + 12px) 100%,12px 100%);
+  background:linear-gradient(180deg,#19557a 0%,#0b314b 45%,#061b2d 100%);
+  box-shadow:0 11px 18px rgba(2,12,23,.4);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-glass-top {
+  position:absolute;
+  z-index:2;
+  pointer-events:none;
+  top:-22px;
+  left:28px;
+  right:23px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(156,231,255,.66) 15%,rgba(111,185,226,.22) 64%,transparent);
+  box-shadow:0 0 12px rgba(99,188,239,.2);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer :is(
+  .journey-stack-layer-count,
+  .journey-stack-layer-main,
+  .journey-stack-layer-dot
+) { position:relative; z-index:3; }
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-count {
+  font-size:23px;
+  color:#98dcff;
+  text-shadow:0 0 14px rgba(95,188,234,.14);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-name {
+  font-size:clamp(15px,1.42vw,20px);
+  font-weight:700;
+  letter-spacing:-.03em;
+  color:#f0f9ff;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-signal {
+  color:#9bbfd5;
+  font-size:9px;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-dot {
+  width:8px;
+  height:8px;
+  background:#85d9fd;
+  box-shadow:0 0 0 4px rgba(93,176,230,.08),0 0 15px rgba(97,211,255,.5);
+}
+/* Active plate rises a little and has a glassy blue edge. */
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected {
+  transform:translate3d(-9px,-11px,0);
+  border-color:rgba(184,237,255,.92);
+  border-top-color:#e7fcff;
+  background:
+    linear-gradient(99deg,rgba(124,223,255,.16),transparent 62%),
+    linear-gradient(127deg,#236b94,#174864 57%,#0d2e49);
+  box-shadow:
+    inset 0 1px 0 rgba(235,250,255,.36),
+    0 0 0 1px rgba(112,211,255,.13),
+    0 15px 28px rgba(0,5,15,.36),
+    0 0 50px rgba(54,154,211,.2);
+  z-index:50;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected .journey-stack-glass-top {
+  background:linear-gradient(90deg,transparent,rgba(194,248,255,.97),rgba(102,211,249,.53),transparent);
+  box-shadow:0 0 15px rgba(105,218,255,.5);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:hover,
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:focus-visible {
+  transform:translate3d(-15px,-19px,0);
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer:hover:not(.is-removed):not(.is-selected),
+.journey-cinematic .journey-stack-list .journey-stack-layer:focus-visible:not(.is-removed):not(.is-selected) {
+  transform:translate3d(calc(var(--stack-depth) * 12px - 7px),calc(var(--stack-depth) * var(--depth-step) - 7px),0);
+  border-color:rgba(156,221,255,.92);
+  background:linear-gradient(118deg,#1d5576,#11364e 63%,#0b2b44);
+  outline:2px solid rgba(92,188,248,.17);
+  outline-offset:5px;
+}
+.journey-cinematic .journey-stack-list .journey-stack-layer.is-removed {
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  filter:none;
+  transform:translate3d(-235px,-115px,0) rotate(-8deg);
+}
+
+/* Mobile: same dimensional design, reduced projection so no sideways clipping. */
+@media(max-width:1150px) {
+  .journey-cinematic .journey-stack-list{margin-inline: auto; max-width:690px}
+}
+@media(max-width:720px) {
+  .journey-cinematic .journey-stack-list{height:550px;margin-top:28px;max-width:100%}
+  .journey-cinematic .journey-stack-list .journey-stack-layer {
+    --depth-step:68px;
+    --side-depth:12px;
+    left:11px;
+    right:43px;
+    top:38px;
+    height:70px;
+    min-height:70px;
+    grid-template-columns:27px minmax(0,1fr) 8px;
+    padding:11px 10px 11px 12px;
+    gap:8px;
+    transform:translate3d(calc(var(--stack-depth) * 4px),calc(var(--stack-depth) * var(--depth-step)),0) !important;
+  }
+  .journey-cinematic .journey-stack-list .journey-stack-layer::before {height:17px;inset:-16px -7px auto 0;clip-path:polygon(16px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-glass-top{top:-15px;left:15px;right:15px}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-name{font-size:13px;letter-spacing:-.02em}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-count{font-size:16px}
+  .journey-cinematic .journey-stack-list .journey-stack-layer .journey-stack-layer-signal{font-size:8px}
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-selected{transform:translate3d(-2px,-9px,0)!important}
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:hover,
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-selected:focus-visible{transform:translate3d(-2px,-12px,0)!important}
+  .journey-cinematic .journey-stack-list .journey-stack-layer.is-removed{transform:translate3d(-165px,-65px,0) rotate(-6deg)!important}
+}
+@media(max-width:390px){
+  .journey-cinematic .journey-stack-list .journey-stack-layer{right:36px}
+}
+@media(prefers-reduced-motion:reduce){
+  .journey-cinematic .journey-stack-list .journey-stack-layer {transition:none!important;will-change:auto}
+}

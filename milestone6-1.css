@@ -1,0 +1,80 @@
+/* Milestone 6.1 — Career film + full project knowledge graph */
+.journey-cinematic [hidden]{display:none!important}
+.journey-cinematic{padding:102px 0 94px}
+.journey-cinematic .journey-title-row{margin-bottom:37px}
+.journey-stage-reel{border:1px solid #315771;background:linear-gradient(135deg,#071c2d 0%,#040b16 75%);box-shadow:0 22px 65px #01070e8c;overflow:hidden}
+.journey-cinema-stage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:0;min-height:520px}
+.journey-cinematic .journey-film{position:relative;top:auto;border:0;border-right:1px solid #3157718a;box-shadow:none;background:linear-gradient(145deg,#092a42 3%,#03111d 100%);height:100%;display:flex;flex-direction:column}
+.journey-cinematic .journey-viewport{height:auto;min-height:450px;flex:1;background:radial-gradient(ellipse at 55% 46%,#0d56805b,transparent 67%),linear-gradient(140deg,#051725,#071220)}
+.journey-cinematic .journey-viewport:before,.journey-cinematic .journey-viewport:after{width:360px;height:360px;left:calc(50% - 180px);top:calc(50% - 180px);border-color:#67caff16}
+.journey-cinematic .journey-viewport:after{transform:rotate(-34deg) scale(.72)}
+.journey-cinematic .journey-visual{height:100%;width:100%;z-index:1;position:absolute;inset:0}
+.journey-cinema-svg{width:100%;height:auto;max-height:95%;overflow:visible;filter:drop-shadow(0 0 8px #318ec137)}
+.journey-cinema-grid path{stroke:#4a91b51b;stroke-width:1;fill:none}
+.journey-cinema-orbit{stroke:#67cbf922;stroke-width:1;fill:none;stroke-dasharray:4 9;transform-origin:365px 194px;animation:careerOrbit 38s linear infinite}
+.journey-cinema-orbit.orbit-secondary{stroke:#8ac8e91a;stroke-dasharray:none;animation-duration:46s;animation-direction:reverse}
+.journey-cinema-guide{fill:none;stroke:#4487ad5c;stroke-width:1.5}
+.journey-cinema-trace-halo{fill:none;stroke:#61c5ff;stroke-width:10;opacity:.35;filter:url(#careerBlur);stroke-linecap:round}
+.journey-cinema-trace{fill:none;stroke:url(#careerTrail);stroke-width:2.8;stroke-linecap:round;filter:drop-shadow(0 0 6px #56b6ef)}
+.journey-cinema-point .point-ring{stroke:#397ca5;fill:#052235;stroke-width:1.5;transition:stroke .3s,fill .3s}
+.journey-cinema-point .point-center{fill:#5d90ae;transition:fill .3s}
+.journey-cinema-point .point-label{font:10px var(--mono);fill:#76a7c2;letter-spacing:.03em;transition:fill .3s}
+.journey-cinema-point.is-visited .point-ring{stroke:#7ccaf1;fill:#0c3a59}
+.journey-cinema-point.is-current .point-ring{stroke:#c8f2ff;fill:#215878;stroke-width:2.3;filter:drop-shadow(0 0 11px #65c5f9)}
+.journey-cinema-point.is-current .point-center{fill:#d9faff}
+.journey-cinema-point.is-current .point-label,.journey-cinema-point.is-visited .point-label{fill:#d4efff}
+.journey-signal{filter:drop-shadow(0 0 17px #67d3ff);pointer-events:none}
+.journey-cinematic .journey-stage-data{font-size:10px}
+.journey-narrative{padding:37px clamp(23px,3.4vw,50px);display:flex;justify-content:center;flex-direction:column;min-width:0}
+.journey-narrative-enter{animation:journeyCopy .65s cubic-bezier(.21,.9,.27,1) both}
+.journey-narrative-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#75c8fa;font:10px var(--mono);letter-spacing:.08em}
+.journey-narrative .journey-place{margin-top:31px}
+.journey-narrative h3{font:600 clamp(29px,3.3vw,48px)/1.12 var(--display);letter-spacing:-.06em;margin:0 0 20px;color:#f5fbff}
+.journey-narrative .journey-description{font-size:14px;line-height:1.85;max-width:600px}
+.journey-narrative .journey-outcome{margin-top:28px}
+.journey-narrative .journey-project-cta{display:inline-block;align-self:flex-start;text-decoration:none}
+.journey-playback{padding:20px 25px 24px;border-top:1px solid #345e7873;background:#071723}
+.journey-playback-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#83b6d3;font:9px var(--mono);letter-spacing:.1em;margin-bottom:13px}
+.journey-playback-track{height:4px;background:#19415a;position:relative;overflow:hidden;border-radius:3px;margin-bottom:20px}
+.journey-playback-track span{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,#287db3,#7bd3ff);box-shadow:0 0 16px #77cbff}
+.journey-playback-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.journey-playback button,.journey-roadmap button{cursor:pointer}
+.journey-play-button,.journey-secondary-button,.journey-roadmap-button{padding:12px 16px;min-height:42px;border:1px solid #386c8d;color:#c4e6fa;background:#0b283e;font:11px var(--mono)}
+.journey-play-button{border-color:#87d5ff;background:#73c8fa;color:#031a2c;font-weight:600;min-width:126px}
+.journey-secondary-button[disabled]{opacity:.32;cursor:default}
+.journey-roadmap-button{margin-left:auto;background:transparent;color:#94d4fc;border-color:transparent;border-bottom:1px solid #518caf}
+.journey-play-button:hover,.journey-play-button:focus-visible{background:#b2eaff}
+.journey-secondary-button:hover:not([disabled]),.journey-secondary-button:focus-visible{border-color:#b0e7ff;background:#164667}
+.journey-roadmap-button:hover{color:#e8f8ff}
+.journey-live-status{font:10px/1.6 var(--mono);letter-spacing:.02em;color:#83b5d1;margin:18px 0 0}
+.journey-roadmap{padding:36px;border:1px solid #3d6c89;background:radial-gradient(ellipse at 50% 0%,#14507045,transparent 68%),#071928;box-shadow:0 20px 70px #01060d88}
+.journey-roadmap-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid #40678175}
+.journey-roadmap-heading h3{font:600 clamp(38px,4.2vw,66px)/1.08 var(--display);letter-spacing:-.07em;color:#f1fbff;margin:12px 0 14px}
+.journey-roadmap-heading h3 span{color:#78c8f4}
+.journey-roadmap-heading p:not(.overline){color:#b3d3e7;font-size:14px;line-height:1.7;max-width:620px;margin:0}
+.journey-roadmap-heading .journey-play-button{white-space:nowrap}
+.journey-roadmap-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 12px;margin-top:37px;position:relative}
+.journey-map-card{position:relative;text-align:left;display:flex;flex-direction:column;gap:11px;min-height:210px;padding:18px 16px 17px;background:linear-gradient(150deg,#0b2b41,#071827);border:1px solid #38648288;color:#f5fbff;transition:transform .27s,border-color .27s,background .27s}
+.journey-map-card:before{content:'';position:absolute;left:16px;right:-12px;top:27px;height:1px;background:#4b9bc0;opacity:.65}
+.journey-map-card:nth-child(4):before,.journey-map-card:last-child:before{right:16px}
+.journey-map-card:hover,.journey-map-card:focus-visible{transform:translateY(-4px);border-color:#9edfff;background:linear-gradient(150deg,#124362,#071827)}
+.journey-map-number{z-index:1;display:flex;align-items:center;justify-content:space-between;font:11px var(--mono);color:#a5e7ff;letter-spacing:.08em}
+.journey-map-node{display:block;border-radius:50%;width:16px;height:16px;box-shadow:0 0 15px #4cafff66;border:2px solid #b4eaff;background:#0e466a}
+.journey-map-place{font:10px/1.4 var(--mono);color:#72b6d9;text-transform:uppercase;margin-top:8px}
+.journey-map-card strong{font:600 17px/1.3 var(--display);letter-spacing:-.025em}
+.journey-map-learning{font:11px/1.65 var(--sans);color:#a8ccdf;margin-top:auto}
+.journey-roadmap-note{font:10px/1.65 var(--mono);color:#91b6ca;max-width:930px;margin:25px 0 0}
+@keyframes careerOrbit{to{transform:rotate(360deg)}}
+@keyframes journeyCopy{from{opacity:0;transform:translateY(17px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+/* All projects, capabilities and technologies are visible immediately. */
+.project-network .network-overview .network-node{opacity:1}
+.project-network .network-overview .network-edge{opacity:.37;stroke-width:1.15}
+.project-network .network-overview .network-edge-flow{opacity:0;animation:none}
+.project-network .network-overview .network-node:hover{z-index:10}
+.project-network .network-focus .network-overview-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;border-top:1px solid #315d79;border-bottom:1px solid #315d79;padding:21px 0;margin:23px 0}
+.project-network .network-overview-stats span{font:10px var(--mono);color:#b0cfe3;display:flex;flex-direction:column;gap:8px}
+.project-network .network-overview-stats strong{font:600 29px var(--display);color:#86d6ff}
+@media(max-width:1110px){.journey-cinema-stage{grid-template-columns:1fr}.journey-cinematic .journey-film{border-right:0;border-bottom:1px solid #3157718a;min-height:350px}.journey-cinematic .journey-viewport{min-height:390px}.journey-narrative{min-height:380px}.journey-roadmap-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.journey-cinematic{padding:66px 0 70px}.journey-cinematic .journey-title-row{margin-bottom:26px}.journey-cinematic .journey-viewport{min-height:300px}.journey-cinema-svg{height:100%}.journey-cinema-point .point-label{font-size:11px}.journey-narrative{min-height:0;padding:29px 23px 35px}.journey-narrative .journey-description{font-size:13px}.journey-playback{padding:19px 16px}.journey-playback-buttons{gap:7px}.journey-play-button,.journey-secondary-button,.journey-roadmap-button{font-size:10px;padding:10px 12px;min-height:44px}.journey-roadmap-button{margin-left:0}.journey-roadmap{padding:23px 16px}.journey-roadmap-heading{align-items:flex-start;flex-direction:column}.journey-roadmap-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.journey-map-card{min-height:195px;padding:14px 11px;gap:10px}.journey-map-card strong{font-size:14px}.journey-map-learning{font-size:10px}.journey-map-card:before{top:23px}}
+@media(max-width:390px){.journey-roadmap-cards{grid-template-columns:1fr}.journey-map-card{min-height:0}.journey-playback-head span:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){.journey-cinema-orbit,.journey-narrative-enter{animation:none!important}.journey-map-card{transition:none}}

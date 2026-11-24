@@ -1,0 +1,13 @@
+/* M6.28 — Focused homepage refinements; no other site component changes. */
+.intro-meta {
+  color:#a5daff;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.16em;
+  margin-bottom:45px;
+}
+.intro-meta .status-signal {width:8px;height:8px;box-shadow:0 0 0 4px rgba(110,195,251,.12),0 0 17px rgba(110,195,251,.55)}
+.hero-grid h1 {font-size:clamp(3.5rem,5.65vw,5.15rem);line-height:1.065;letter-spacing:-.072em;max-width:880px}
+.hero-grid h1 em {display:block;color:#69bdf0}
+@media(max-width:900px){.hero-grid h1{font-size:clamp(3.55rem,7.6vw,5.6rem)}}
+@media(max-width:620px){.intro-meta{font-size:11px;letter-spacing:.13em;margin-bottom:27px}.hero-grid h1{font-size:clamp(2.75rem,11.4vw,4.2rem);line-height:1.08}}

@@ -1,0 +1,102 @@
+/* M6.44 — the original three-layer *visual treatment*, applied to the
+   existing eight-category skill network. No new images or fabricated edges. */
+#engine .skill-v44-intro{
+ display:flex;align-items:center;justify-content:space-between;gap:26px;
+ padding:24px 28px 20px;border:1px solid #2c6687;border-bottom:0;
+ background:linear-gradient(110deg,#071e31,#041726 85%);
+}
+#engine .skill-v44-intro>div:first-child{max-width:870px}
+#engine .skill-v44-intro h3{font:750 clamp(20px,1.7vw,28px)/1.22 'DM Sans',sans-serif;letter-spacing:-.035em;color:#ecf8ff;margin:0}
+#engine .skill-v44-intro h3 span{color:#71d2ff}
+#engine .skill-v44-intro p:not(.proof-map-eyebrow){margin:10px 0 0;color:#a9d2e8;font:400 13px/1.65 'DM Sans',sans-serif;max-width:800px}
+#engine .skill-v44-intro .proof-map-metrics{gap:19px}
+#engine .skill-v44-intro .proof-map-metrics strong{font-size:26px}
+/* Use the quiet, structured toolbar hierarchy of the reference network. */
+#engine .skill-v41-careers{border-color:#2b6789;background:linear-gradient(110deg,#061b2c,#041623);padding:15px 21px 13px}
+#engine .skill-v42-pathway{background:linear-gradient(115deg,#09263d,#051a2c);border-color:#2d6584;padding:12px 21px 10px}
+#engine .skill-v42-pathway-heading p:last-child{max-width:850px;color:#a2c9e1}
+#engine .skill-v42-pathway h3{font-size:16px}
+#engine .skill-v42-path-chips{margin-top:9px;padding-bottom:6px}
+#engine .skill-v42-path-chip{min-height:37px;max-width:230px;padding:6px 9px}
+#engine .skill-v42-path-legend{margin-top:7px}
+#engine .skill-v3-toolbar{border-color:#2b6989;background:#061b2d}
+#engine .skill-v3-module{border:1px solid #2d6684;border-top:0;background:#051b2d}
+#engine .skill-v3-module .skill-atlas-stage{min-width:0;overflow:hidden}
+/* Unlike the older responsive fallback, keep the complete linked graph visible
+   on desktops and tablets. Narrower viewports can pan horizontally. */
+#engine .skill-v3-module .skill-v3-viewport{
+ display:block!important;width:100%;max-width:100%;min-width:0;
+ overflow-x:auto!important;overflow-y:hidden!important;
+ scrollbar-width:thin;scrollbar-color:#397b9c #061b2d;
+ background:radial-gradient(ellipse at 48% 48%,rgba(21,86,122,.20),transparent 72%),#061b2b;
+}
+#engine .skill-v3-module .skill-atlas-canvas{position:relative;isolation:isolate;min-width:1510px}
+#engine .skill-v3-module .skill-atlas-columns{z-index:0}
+#engine .skill-v3-module .skill-column{
+ border:1px solid rgba(77,155,193,.32);border-radius:3px;
+ background:linear-gradient(180deg,rgba(17,60,87,.32),rgba(4,29,47,.26) 85%);
+ box-shadow:inset 0 1px 0 rgba(118,205,251,.06);
+ padding:20px 12px 8px 12px;
+}
+#engine .skill-v3-module .skill-column>span{font:750 11px/1.22 'DM Sans',sans-serif;letter-spacing:.01em;color:#a4dbf5}
+#engine .skill-v3-module .skill-column>small{color:#85b1ca;font:500 10px/1.25 'DM Sans',sans-serif}
+#engine .skill-v3-module .skill-atlas-svg{z-index:1;pointer-events:none;overflow:visible!important}
+#engine .skill-v3-module .skill-atlas-nodes{z-index:2}
+/* Neuron cards use the three-layer's slim illuminated left rail and sharp corners. */
+#engine .skill-v3-module .skill-v3-node{
+ height:62px!important;min-height:62px!important;max-height:62px!important;
+ padding:8px 9px!important;border-radius:3px!important;
+ background:linear-gradient(105deg,#092a42,#061d31 87%)!important;
+ border:1px solid #4489aa;box-shadow:inset 3px 0 0 rgba(85,192,241,.38),0 1px 0 rgba(111,186,223,.08);
+ grid-template-columns:9px minmax(0,1fr);gap:3px 6px;
+}
+#engine .skill-v3-module .skill-v3-node .skill-v3-beacon{width:7px;height:7px;background:#82dfff;box-shadow:0 0 9px #56caff}
+#engine .skill-v3-module .skill-v3-node .skill-v3-label{font:720 12px/1.16 'DM Sans',sans-serif;max-height:42px;color:#eaf8ff}
+#engine .skill-v3-module .skill-v3-node small{font:600 9px/1.15 'DM Sans',sans-serif;color:#9ac7e0}
+#engine .skill-v3-module .skill-v3-node:hover,#engine .skill-v3-module .skill-v3-node:focus-visible,#engine .skill-v3-module .skill-v3-node.is-selected{
+ background:linear-gradient(105deg,#155775,#0a304b)!important;
+ border-color:#a3e8ff;box-shadow:inset 3px 0 0 #b4f1ff,0 0 0 1px rgba(111,212,251,.25),0 0 15px rgba(79,190,249,.4);
+}
+#engine .skill-v3-module .skill-v3-node.is-related,#engine .skill-v3-module .skill-v3-node.is-trail{
+ background:linear-gradient(105deg,#114260,#082940)!important;
+ border-color:#88d9fa;box-shadow:inset 3px 0 0 #a9ebff,0 0 14px rgba(78,193,251,.30);
+}
+#engine .skill-v3-module .skill-v3-node.is-muted{opacity:.38}
+#engine .skill-v3-module .skill-v3-node.is-lens-dim:not(.is-selected){opacity:.5}
+/* A real visible circuit at rest. Thin cyan strokes plus dark underlay keep the
+   70 relationships distinguishable when they cross. Conceptual edges are dashed. */
+#engine .skill-v3-module .skill-v3-connection .skill-v42-wire-border{stroke:#031421;stroke-opacity:.92;stroke-width:4.9;fill:none}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context .skill-v42-wire-border{stroke-width:3.5;stroke-opacity:.66}
+#engine .skill-v3-module .skill-v3-connection .skill-v3-wire{
+ stroke:#69c8f9;stroke-width:1.75;stroke-opacity:.70;filter:drop-shadow(0 0 2.1px rgba(80,190,249,.45));
+}
+#engine .skill-v3-module .skill-v3-connection.skill-v3-context .skill-v3-wire{
+ stroke:#82aeca;stroke-width:1.4;stroke-opacity:.52;stroke-dasharray:5 7;filter:none;
+}
+#engine .skill-v3-module .skill-v3-connection.is-lens-related .skill-v3-wire{stroke-opacity:.90;stroke-width:2.1}
+#engine .skill-v3-module .skill-v3-connection.is-lens-dim .skill-v3-wire{stroke-opacity:.30}
+#engine .skill-v3-module .skill-v3-connection.is-muted .skill-v3-wire{stroke-opacity:.23}
+#engine .skill-v3-module .skill-v3-connection.is-related .skill-v3-wire{stroke:#bbf0ff;stroke-opacity:1;stroke-width:3.1;filter:drop-shadow(0 0 5px #53cafa)}
+#engine .skill-v3-module .skill-v3-connection .skill-v3-signal{stroke:#cdf2ff;stroke-opacity:0}
+#engine .skill-v3-module .skill-v3-connection.is-ambient .skill-v3-signal{stroke-opacity:.7}
+#engine .skill-v3-module .skill-v3-connection.is-related .skill-v3-signal{stroke-opacity:1}
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-back{stroke:#062039;stroke-width:7.5}
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-front{stroke:#b8edff;stroke-width:3.2;filter:drop-shadow(0 0 4.5px #48c3f4)}
+#engine .skill-v3-module .skill-v42-focus-edge .skill-v42-focus-pulse{stroke:#f4fdff;stroke-width:4.6;filter:drop-shadow(0 0 6px #9ceaff)}
+#engine .skill-v3-module .skill-v3-panel{background:linear-gradient(115deg,#071f32,#061828 90%)!important;border-top-color:#2d6889!important}
+#engine .skill-v3-module .skill-v3-footer{color:#8fc7e8;background:#061b2c}
+@media(max-width:1250px){
+ #engine .skill-v44-intro{align-items:flex-start;flex-direction:column}
+ #engine .skill-v3-module .skill-v3-viewport{display:block!important}
+ #engine .skill-v3-module .skill-v3-mobile{display:none!important}
+}
+@media(max-width:700px){
+ #engine .skill-v44-intro{padding:19px 16px}
+ #engine .skill-v44-intro .proof-map-metrics{flex-wrap:wrap}
+ /* The original three-layer graph also uses an accessible node list on phones. */
+ #engine .skill-v3-module .skill-v3-viewport{display:none!important}
+ #engine .skill-v3-module .skill-v3-mobile{display:grid!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #engine .skill-v3-module .skill-v3-signal,#engine .skill-v3-module .skill-v42-focus-pulse{animation:none!important;display:none!important}
+}
