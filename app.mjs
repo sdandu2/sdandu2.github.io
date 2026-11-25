@@ -80,11 +80,4 @@ panel.addEventListener('click', evt => {
   if (b) gotoProject(b.dataset.jump);
 });
 
-document.querySelectorAll('[data-featured-project]').forEach(button => {
-  button.addEventListener('click', () => {
-    const id = button.dataset.featuredProject;
-    projectNetwork?.focus(id, {scrollToDetail:false});
-    document.getElementById('project-focus')?.scrollIntoView({behavior:reduced()?'auto':'smooth', block:'start'});
-  });
-});
 window.portfolioShowProject = gotoProject;
