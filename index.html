@@ -58,7 +58,9 @@
 <link rel="stylesheet" href="milestone6-53.css">
 <link rel="stylesheet" href="milestone6-54.css">
 <link rel="stylesheet" href="milestone6-55.css">
+<link rel="stylesheet" href="milestone6-56.css">
 <script src="contact-circuit.mjs" type="module" defer></script>
+<script src="network-scroll.mjs" type="module" defer></script>
 </head>
 <body>
 <div class="chrome-grain" aria-hidden="true"></div>
@@ -143,7 +145,13 @@
  <div class="shell">
   <div class="skill-v3-heading"><p class="overline">PROJECT NEURAL NETWORK</p><h2 id="engine-title">Project <span>Breakdown.</span></h2><p>Seven projects, each connected to their own set of technical requirements. Select a project to see what went into it, or select a skill to explore the other skills it relates to.</p></div>
   <div class="project-network-toolbar skill-v3-toolbar" id="project-network-controls" aria-label="Knowledge network controls"><span class="project-network-readout" id="project-signal-readout" aria-live="polite">7 project routes · 8 connected layers · 70 links</span><div class="project-network-toolbar-actions"><button type="button" id="skill-view-evidence" hidden>View project ↓</button><button type="button" id="project-motion-toggle" aria-pressed="true">Pause signals</button><button type="button" id="skill-clear-selection" disabled>Clear selection</button></div></div>
-  <p class="skill-v47-laptop-hint" id="skill-laptop-scroll-hint">SCROLL SIDEWAYS TO EXPLORE ALL EIGHT CATEGORIES <span aria-hidden="true">→</span></p>
+  <nav class="skill-v56-scroll-nav" id="skill-scroll-nav" aria-label="Knowledge network horizontal navigation" hidden>
+   <span class="skill-v56-scroll-copy">Explore the remaining categories</span>
+   <div class="skill-v56-scroll-actions">
+    <button type="button" id="skill-scroll-previous" aria-label="Scroll knowledge network to previous categories" disabled><span aria-hidden="true">←</span> Previous</button>
+    <button type="button" id="skill-scroll-next" aria-label="Scroll knowledge network to next categories">Next <span aria-hidden="true">→</span></button>
+   </div>
+  </nav>
   <div class="network-module project-network skill-atlas-module skill-v3-module">
    <div class="network-stage skill-atlas-stage">
     <div id="skill-atlas-viewport" class="skill-atlas-viewport skill-v3-viewport" tabindex="0" aria-label="Eight-layer project knowledge graph with seven complete project routes and seventy connections. Choose a project to highlight its eight-layer route, or a skill to follow downstream connections toward the right."><div class="skill-atlas-canvas"><div id="skill-atlas-columns" class="skill-atlas-columns" aria-hidden="true"></div><svg id="project-connections" class="skill-atlas-svg" aria-hidden="true"></svg><div id="project-graphic" class="skill-atlas-nodes" role="group" aria-label="Knowledge nodes"></div></div></div>
