@@ -14,7 +14,7 @@ const grouped=visualColumns.map(c=>skillNodes.filter(n=>n.visualColumn===c.id));
 const maxRows=Math.max(...grouped.map(g=>g.length));
 const projectMap=new Map(projects.map(p=>[p.id,p]));
 const edgeId=e=>`${e.from}|${e.to}`;
-const imageFigure=(p,extraClass='')=>p?.image?`<figure class="skill-v46-project-art ${extraClass}"><img src="${esc(p.image)}" alt="${esc(p.imageLabel||`Visual overview of ${p.name}`)}" loading="lazy" decoding="async"><figcaption>${esc(p.imageLabel||`Existing project artwork for ${p.name}`)}</figcaption></figure>`:'';
+const imageFigure=(p,extraClass='')=>p?.image?`<figure class="skill-v46-project-art ${extraClass}"><img src="${esc(p.image)}" alt="${esc(p.imageLabel||`Visual overview of ${p.name}`)}" loading="lazy" decoding="async"></figure>`:'';
 const inlineNotes=p=>{
  const n=p.id==='financialscenarios'?financeNotes:insights[p.id];
  if(!n)return '';
@@ -188,7 +188,7 @@ export function mountSkillNetwork({onShowNotes}={}){
   }
   const project=projectMap.get(node.id);
   if(!project)return;
-  detail.innerHTML=`<div class="skill-detail-heading"><div><p class="skill-detail-kicker">PROJECT BREAKDOWN</p><h3 id="skill-detail-title" tabindex="-1">${esc(project.name)}</h3></div><div class="skill-detail-controls"><button type="button" data-back-to-network>Back to network</button><button type="button" data-skill-clear>All projects</button></div></div><div class="skill-v46-project-lead skill-v49-project-only"><div class="skill-v46-project-copy"><p class="skill-v46-eyebrow">ABOUT THIS PROJECT</p><p class="skill-v46-full-description">${esc(project.description)}</p>${node.project?`<div class="network-focus-result network-focus-result-compact"><strong>${esc(node.project.result)}</strong><span>${esc(node.project.resultLabel)}</span></div>`:''}<div class="project-network-actions">${project.repo?`<a href="${esc(project.repo)}" target="_blank" rel="noopener noreferrer">View repository</a>`:''}</div>${inlineNotes(project)}</div>${imageFigure(project,'skill-v46-hero-art')}</div>`;
+  detail.innerHTML=`<div class="skill-detail-heading"><div><p class="skill-detail-kicker">PROJECT BREAKDOWN</p><h3 id="skill-detail-title" tabindex="-1">${esc(project.name)}</h3></div><div class="skill-detail-controls"><button type="button" data-back-to-network>Back to network</button><button type="button" data-skill-clear>All projects</button></div></div><div class="skill-v46-project-lead skill-v49-project-only"><div class="skill-v46-project-copy"><p class="skill-v46-eyebrow">ABOUT THIS PROJECT</p><p class="skill-v46-full-description">${esc(project.description)}</p>${node.project?`<div class="network-focus-result network-focus-result-compact"><strong>${esc(node.project.result)}</strong><span>${esc(node.project.resultLabel)}</span></div>`:''}<div class="project-network-actions">${project.interfaceUrl?`<a href="${esc(project.interfaceUrl)}" target="_blank" rel="noopener noreferrer">View actual interface</a>`:''}${project.repo?`<a href="${esc(project.repo)}" target="_blank" rel="noopener noreferrer">View repository</a>`:''}</div>${inlineNotes(project)}</div>${imageFigure(project,'skill-v46-hero-art')}</div>`;
  }
 
  function pick(id,{scrollToDetail}={}){
