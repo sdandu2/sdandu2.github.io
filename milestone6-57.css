@@ -1,0 +1,23 @@
+/* M6.57 — A standard, draggable horizontal scrollbar, never a simulated slider. */
+#engine .skill-v57-scroll-rail[hidden] {display:none!important}
+#engine .skill-v57-scroll-rail {
+ box-sizing:border-box;display:block;width:100%;height:22px;overflow-x:scroll;overflow-y:hidden;
+ border:1px solid #36536a;border-bottom:0;background:#111e29;
+ scrollbar-width:auto;scrollbar-color:#929da8 #20262c;
+ overscroll-behavior-x:contain;
+}
+#engine .skill-v57-scroll-spacer {height:1px;min-width:0;pointer-events:none}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar {height:15px;background:#20262c}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar-track {background:#20262c;border-radius:8px}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar-thumb {background:#939da7;border:3px solid #20262c;border-radius:9px;min-width:56px}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar-thumb:hover {background:#bcc6d0}
+#engine .skill-v57-scroll-rail:focus-visible{outline:2px solid #9ad9ff;outline-offset:2px}
+/* The graph remains natively scrollable but the top rail is the only visible scrollbar. */
+#engine .skill-v3-module .skill-v3-viewport {scrollbar-width:none!important}
+#engine .skill-v3-module .skill-v3-viewport::-webkit-scrollbar {display:none}
+/* Familiar destination icons replace gate alphabet in the quantum-inspired contact map. */
+.qc-inline-icon {color:#c5efff;stroke:currentColor;fill:none;filter:drop-shadow(0 0 4px rgba(143,222,255,.32))}
+.qc-card-icon {width:20px;height:20px;display:block;color:#bdeaff;stroke:currentColor;fill:none}
+.qc-gate-index {display:grid;place-items:center}
+.qc-source-wave {fill:none;stroke:#d7f7ff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:620px){.qc-card-icon{width:18px;height:18px}}
