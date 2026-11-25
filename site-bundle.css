@@ -5071,3 +5071,17 @@ M6.42: More legible graph connections and four featured, fully project-backed pa
 }
 @media(prefers-reduced-motion:reduce){.qc-visual-gate{transition:none}}
 
+
+/* ━━━ milestone6-60.css ━━━ */
+/* M6.60 — The approved, more confident homepage introduction and subtle site-blue scrollbar. */
+.introduction .hero-description .hero-copy-paragraph {display:block;}
+.introduction .hero-description .hero-copy-paragraph + .hero-copy-paragraph {margin-top:12px;}
+/* Preserve a native draggable scrollbar, colored to harmonize with the network palette. */
+#engine .skill-v57-scroll-rail {background:#071d2c;border-color:#2d617e;scrollbar-color:#5f9fbd #0a2538;}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar {height:15px;background:#0a2538;}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar-track {background:#0a2538;border-radius:8px;}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar-thumb {background:#5f9fbd;border:3px solid #0a2538;border-radius:9px;min-width:56px;}
+#engine .skill-v57-scroll-rail::-webkit-scrollbar-thumb:hover {background:#84c1de;}
+#engine .skill-v57-scroll-rail:focus-visible {outline:2px solid #a9e0fc;outline-offset:2px;}
+@media(max-width:620px){.introduction .hero-description .hero-copy-paragraph + .hero-copy-paragraph {margin-top:10px;}}
+
