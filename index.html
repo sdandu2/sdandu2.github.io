@@ -77,8 +77,10 @@
 
 
 
+
 <script src="contact-circuit.mjs" type="module" defer></script>
 <script src="network-scroll.mjs" type="module" defer></script>
+<script src="mobile-nav.mjs" type="module" defer></script>
 <link rel="stylesheet" href="site-bundle.css">
 </head>
 <body>
@@ -86,6 +88,8 @@
 <header class="site-head" id="top">
   <a class="identity" href="#top" aria-label="Sammy Dandu, top of page"><span class="signature">SD<span>.</span></span><span class="identity-text"><strong>Sammy Dandu</strong><small>Software, ML, Quantum Computing, and Quantitative Finance</small></span></a>
   <nav class="top-nav" aria-label="Primary"><a href="#journey">Journey</a><a href="#engine">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-controls="mobile-site-nav" aria-expanded="false" aria-label="Open navigation menu"><span class="mobile-menu-lines" aria-hidden="true"><span></span><span></span><span></span></span><span class="mobile-menu-label">Menu</span></button>
+  <nav class="mobile-site-nav" id="mobile-site-nav" aria-label="Mobile primary navigation" hidden><a href="#journey">Journey</a><a href="#engine">Projects</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
   <div class="quick-links"><a href="https://github.com/sdandu2" target="_blank" rel="noopener noreferrer">GitHub</a><a href="assets/SudhamshuDandu_Resume.pdf" download="SudhamshuDandu_Resume.pdf" class="resume-quick">Resume</a><a class="contact-quick" href="mailto:sammy.dandu@gmail.com">Let's talk</a></div>
 </header>
 <main>
@@ -97,13 +101,15 @@
       <p class="hero-description">
         <span class="hero-copy-paragraph">Hello! I'm Sammy Dandu, a second-year graduate student at the University of Maryland pursuing a Master's in Machine Learning.</span>
         <span class="hero-copy-paragraph">I enjoy tackling challenging problems across software engineering, machine learning, quantum computing, and quantitative finance. My curiosity often starts with a question, but I don't stop at understanding the theory. I want to build something, test my ideas, and discover what actually works.</span>
+      </p>
+      <div class="hero-actions"><a href="#engine" class="button button-primary">Explore projects</a><a href="#journey" class="button button-secondary">Read my story</a></div>
+      <p class="hero-description hero-description-continued" aria-label="More about how I work">
         <span class="hero-copy-paragraph">Whether I'm developing a financial scenario generator to explore how different economic conditions affect market outcomes or investigating how quantum circuit depth influences computational performance, I approach each problem with the same mindset: understand the fundamentals, experiment with different approaches, and turn what I learn into something tangible.</span>
         <span class="hero-copy-paragraph">When a question captures my attention, I hone in on it obsessively. I break down the problem, develop the skills necessary to tackle it, and keep refining my approach until I understand not just what works, but why.</span>
         <span class="hero-copy-paragraph">I've learned that the most rewarding challenges are often the ones that push me beyond what I already know. Rather than waiting until I've mastered a subject, I put myself in environments where I can learn through building, experimentation, and collaboration.</span>
         <span class="hero-copy-paragraph">That's how I continue growing as an engineer and researcher, and it's the mindset I bring to everything I work on.</span>
       </p>
       <p class="hero-career-status"><span class="hero-degree hero-degree-bs">B.S. in Data Science, University of Illinois Chicago</span><span class="hero-degree hero-degree-ms">M.S. in Machine Learning, University of Maryland (Expected May 2027)</span></p>
-      <div class="hero-actions"><a href="#engine" class="button button-primary">Explore projects</a><a href="#journey" class="button button-secondary">Read my story</a></div>
       <div class="discipline-links" role="group" aria-label="Explore my technical interests"><span>EXPLORE BY DISCIPLINE</span><button type="button" data-discipline="Software" aria-controls="discipline-details" aria-expanded="false">Software</button><button type="button" data-discipline="Applied ML" aria-controls="discipline-details" aria-expanded="false">Applied ML</button><button type="button" data-discipline="Quantum" aria-controls="discipline-details" aria-expanded="false">Quantum Computing</button><button type="button" data-discipline="Quantitative finance" aria-controls="discipline-details" aria-expanded="false">Quantitative Finance</button></div>
       <div id="discipline-details" class="discipline-details" hidden aria-live="polite"></div>
       
@@ -122,7 +128,7 @@
 <section class="journey-section journey-cinematic journey-m612" id="journey" aria-labelledby="journey-title">
   <div class="shell">
     <div class="section-title-row journey-title-row"><div><p class="overline"><span class="tiny-blue">◆</span> THE JOURNEY / FROM QUESTIONS TO SYSTEMS</p><h2 id="journey-title">My <span>Journey.</span></h2></div></div>
-    <div class="journey-scroll-intro" role="note"><span class="journey-scroll-led" aria-hidden="true"></span><strong>SCROLL TO EXPLORE</strong><span class="journey-navigation-instruction">Use the Right and Left Arrows to Navigate through the Slideshow</span><a class="journey-skip-top" href="#journey-roadmap">Skip the animation</a></div>
+    <div class="journey-scroll-intro" role="note"><span class="journey-scroll-led" aria-hidden="true"></span><strong>SCROLL TO EXPLORE</strong><span class="journey-navigation-instruction">Use the Right and Left Arrows to Navigate through the Slideshow</span><a class="journey-skip-top" href="#journey-roadmap">Skip the animation</a><a class="journey-skip-projects" href="#engine">Skip to Projects</a></div>
     <div id="journey-scroll-film" class="journey-scroll-film">
     <div class="journey-pin">
     <div id="journey-stage" class="journey-stage-reel">

@@ -5085,3 +5085,68 @@ M6.42: More legible graph connections and four featured, fully project-backed pa
 #engine .skill-v57-scroll-rail:focus-visible {outline:2px solid #a9e0fc;outline-offset:2px;}
 @media(max-width:620px){.introduction .hero-description .hero-copy-paragraph + .hero-copy-paragraph {margin-top:10px;}}
 
+
+/* ━━━ milestone6-61.css ━━━ */
+/* M6.61 — faster project access; accessible compact mobile navigation; shorter seven-chapter desktop Journey. */
+.introduction .hero-description-continued { margin-top:18px; margin-bottom:20px; }
+.introduction .hero-actions { margin-top:20px; margin-bottom:15px; }
+.introduction .hero-actions .button { min-height:42px; display:inline-flex; align-items:center; justify-content:center; }
+/* Do not accelerate or remove any chapter; reduce only its proportional scroll runway. */
+@media (min-width:1111px) {
+  .journey-m612 .journey-scroll-film { height:500vh; }
+}
+.journey-m612 .journey-scroll-intro .journey-skip-projects {
+  font:700 12px/1.45 'DM Sans',sans-serif;
+  color:#e5f7ff; border:1px solid #5c9bc1; border-radius:4px;
+  background:#123a54; padding:8px 13px; text-decoration:none; white-space:nowrap;
+}
+.journey-m612 .journey-scroll-intro .journey-skip-projects:hover,
+.journey-m612 .journey-scroll-intro .journey-skip-projects:focus-visible {
+  border-color:#addef8;background:#1a516f;outline-offset:3px;
+}
+/* Desktop header unchanged. */
+.mobile-menu-toggle,.mobile-site-nav { display:none; }
+.mobile-site-nav[hidden] { display:none!important; }
+@media (max-width:900px) {
+  .site-head { position:relative; isolation:isolate; }
+  .mobile-menu-toggle {
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:42px;min-width:44px;flex:0 0 auto;order:4;
+    border:1px solid #376985;border-radius:5px;padding:8px 10px;
+    background:#09283c;color:#d9f1ff;cursor:pointer;
+    font:650 12px/1.2 'DM Sans',sans-serif;
+  }
+  .mobile-menu-toggle:hover,.mobile-menu-toggle[aria-expanded="true"] { background:#123d56;border-color:#8ac4e4; }
+  .mobile-menu-toggle:focus-visible,.mobile-site-nav a:focus-visible { outline:2px solid #a6defd;outline-offset:3px; }
+  .mobile-menu-lines { width:18px;display:flex;flex-direction:column;gap:4px; }
+  .mobile-menu-lines span {height:2px;width:18px;background:#a7dcf8;border-radius:2px;display:block;}
+  .mobile-site-nav:not([hidden]) {
+    position:absolute;z-index:90;display:grid;gap:2px;
+    top:calc(100% - 2px);right:20px;width:min(300px,calc(100vw - 36px));
+    padding:10px;border-radius:7px;border:1px solid #386b8b;
+    background:linear-gradient(180deg,#0b2940,#041421);
+    box-shadow:0 20px 46px rgba(0,0,0,.58);
+  }
+  .mobile-site-nav a {font:650 14px/1.5 'DM Sans',sans-serif;display:block;color:#d7efff;padding:12px 14px;border-radius:5px;text-decoration:none;}
+  .mobile-site-nav a:hover,.mobile-site-nav a:focus-visible { background:#184660;color:#fff; }
+  .journey-m612 .journey-scroll-intro .journey-skip-projects {font-size:11px;padding:8px 10px;}
+}
+@media (max-width:620px) {
+  .site-head {gap:7px;padding-inline:12px;}
+  .identity-text small {display:none;}
+  .mobile-menu-toggle {gap:6px;padding:7px 8px;font-size:11px;}
+  .quick-links a.resume-quick {padding:9px 9px!important;min-height:40px;display:inline-flex;align-items:center;}
+  /* The portrait remains visible below the copy, while the first-screen priority is project access. */
+  .introduction .hero-visual {order:0;height:260px;margin-top:22px;}
+  .introduction .hero-description-continued { margin-top:17px; }
+  .introduction .hero-actions {margin-top:16px; margin-bottom:12px;}
+  .journey-m612 .journey-scroll-intro .journey-skip-top { margin-left:0; }
+}
+@media (max-width:359px) {
+  .mobile-menu-label {display:none;}
+  .mobile-menu-toggle {min-width:42px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .mobile-menu-toggle,.mobile-site-nav { transition:none!important; }
+}
+
